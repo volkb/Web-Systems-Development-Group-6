@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html class="bg-secondary" lang="en">
 <head>
     <meta charset="utf-8">
     <title>Print Failed</title>
     <?php include 'style.php';?>
-
+    <?php require_once 'controllers/auth_controller.php';?>
     <script type="text-javascript">
         function openForm(url) {
             window.open(url,'form','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=1076,height=768,directories=no,location=no')

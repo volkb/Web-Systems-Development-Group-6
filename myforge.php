@@ -181,7 +181,7 @@
             if(confirm("Are you Sure you want to end the semester? This will drop all users except Upper Admins and Clear the Projects Table.")){
                 alert("For Data Loss Prevention, Reports will be generated now");
                 window.open('reports.php', '_blank');
-                window.location.assign("scripts/end_semester.php");
+                window.location.assign("end_semester.php");
             }
         });
     });
