@@ -1,3 +1,4 @@
+<?php require_once 'controllers/auth_controller.php';?>
 <?php
 function generateInUseButtons(){
     require_once('controllers/db_connector.php');

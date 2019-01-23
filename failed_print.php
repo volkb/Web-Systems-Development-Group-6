@@ -1,3 +1,4 @@
+<?php require_once 'controllers/auth_controller.php';?>
 <!doctype html>
 <html lang="en">
 <head>

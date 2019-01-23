@@ -1,5 +1,10 @@
 <?php
-require_once '../controllers/db_connector.php';
+require_once 'controllers/db_connector.php';
+require_once 'controllers/auth_controller.php';
+//drop everything in sessions first to avoid FK errors
+$conn = dbConnect();
+$target = $conn->prepare("DELETE FROM `sessions` WHERE 1");
+$target->execute();
 
 //drop everything in projects
 $conn = dbConnect();
