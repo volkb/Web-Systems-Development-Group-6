@@ -19,8 +19,9 @@ $('#get_info').submit(function(e){
                 document.getElementById('last').value=parsed[2];
                 document.getElementById('email').value=parsed[3];
                 document.getElementById('rin').value=$('#lookup').val();
+                document.getElementById('inlineFormCustomSelect').value=parsed[4];
             }
-            
+
         }
     });
 });

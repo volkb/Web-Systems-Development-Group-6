@@ -20,6 +20,7 @@ if(isset($_POST['rin'])){
         echo $user['firstName']." ";
         echo $user['lastName']." ";
         echo $user['email']." ";
+        echo $user['type']." ";
     }
 }
 else{

@@ -67,28 +67,25 @@
                   $user_type = getPerms();
                   if($user_type == "admin"){
                       echo "  <div class=\"form-group \">";
-                      echo "    <div class=\"col-auto my-1\">";
-                      echo "      <label class=\"mr-sm-2\" for=\"inlineFormCustomSelect\">Permissions</label>";
-                      echo "      <select class=\"custom-select mr-sm-2\" id=\"inlineFormCustomSelect\" name='perms'>";
-                      echo "        <option selected>Select User Group</option>";
+                      echo "      <select class=\"form-control\" id=\"inlineFormCustomSelect\" name='perms'>";
+                      echo "        <option selected>Permission</option>";
                       echo "        <option value=\"user\">User</option>";
                       echo "        <option value=\"volunteer\">Volunteer</option>";
                       echo "      </select>";
-                      echo "    </div>";
+                      echo "   </div>";
                   }else if ($user_type == "TA"){
                       echo "  <div class=\"form-group \">";
-                      echo "    <div class=\"col-auto my-1\">";
-                      echo "      <label class=\"mr-sm-2\" for=\"inlineFormCustomSelect\">Permissions</label>";
-                      echo "      <select class=\"custom-select mr-sm-2\" id=\"inlineFormCustomSelect\" name='perms'>";
-                      echo "        <option selected value=\"user\">User</option>";
+                      echo "      <select class=\"form-control\" id=\"inlineFormCustomSelect\" name='perms'>";
+                      echo "        <option selected>Permission</option>";
+                      echo "        <option value=\"user\">User</option>";
                       echo "        <option value=\"volunteer\">Volunteer</option>";
                       echo "        <option value=\"admin\">Admin</option>";
                       echo "      </select>";
-                      echo "    </div>";
+                      echo "   </div>";
                   }
                 ?>
 
-                 <div class="form-group">
+                 <div class="form-group text-center">
                     <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Update</button>
                   </div>
                 </form>
