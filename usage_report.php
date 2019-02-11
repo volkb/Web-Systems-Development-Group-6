@@ -1,6 +1,5 @@
 <?php require_once 'controllers/auth_controller.php';?>
 <?php
-
 require_once 'vendor/autoload.php';
 require_once 'controllers/functions.php';
 require_once "controllers/db_connector.php";
@@ -28,83 +27,83 @@ $conn = dbConnect();
 $stmt = "";
 //for machine stats
 $machineUses = ""; //array of MachineName,Count
-    $stmt = "SELECT machine,COUNT(machine) AS numUses FROM projects GROUP BY machine ORDER BY pid DESC";
-    make_query($conn,$stmt,$machineUses,"Row");
+$stmt = "SELECT machine,COUNT(machine) AS numUses FROM projects GROUP BY machine ORDER BY pid DESC";
+make_query($conn,$stmt,$machineUses,"Row");
 
 //for space usage
 $mostPopularMachine = "";
-    $stmt = "SELECT machine FROM projects GROUP BY machine ORDER BY pid DESC LIMIT 1";
-    make_query($conn,$stmt,$mostPopularMachine,"Column");
+$stmt = "SELECT machine FROM projects GROUP BY machine ORDER BY pid DESC LIMIT 1";
+make_query($conn,$stmt,$mostPopularMachine,"Column");
 
 $leastPopularMachine = "";
-    $stmt = "SELECT machine FROM projects GROUP BY machine ORDER BY pid ASC LIMIT 1";
-    make_query($conn,$stmt,$leastPopularMachine,"Column");
+$stmt = "SELECT machine FROM projects GROUP BY machine ORDER BY pid ASC LIMIT 1";
+make_query($conn,$stmt,$leastPopularMachine,"Column");
 
 $mostPopularFilament = "";
-    $stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` DESC LIMIT 1";
-    make_query($conn,$stmt,$mostPopularFilament,"Column");
+$stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` DESC LIMIT 1";
+make_query($conn,$stmt,$mostPopularFilament,"Column");
 
 $leastPopularFilament = "";
-    $stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` ASC LIMIT 1";
-    make_query($conn,$stmt,$leastPopularFilament,"Column");
+$stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` ASC LIMIT 1";
+make_query($conn,$stmt,$leastPopularFilament,"Column");
 
 $mostPopularColor = "";
-    $stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` ASC LIMIT 1";
-    make_query($conn,$stmt,$mostPopularColor,"Column");
+$stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` ASC LIMIT 1";
+make_query($conn,$stmt,$mostPopularColor,"Column");
 
 $leastPopularColor = "";
-    $stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` DESC LIMIT 1";
-    make_query($conn,$stmt,$leastPopularColor,"Column");
+$stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` DESC LIMIT 1";
+make_query($conn,$stmt,$leastPopularColor,"Column");
 
 $numPrints = "";
-    $stmt = "SELECT COUNT(pid) FROM projects";
-    make_query($conn,$stmt,$numPrints,"Column");
+$stmt = "SELECT COUNT(pid) FROM projects";
+make_query($conn,$stmt,$numPrints,"Column");
 
 $totalVolume = "";
-    $stmt = "SELECT SUM(amount) FROM projects";
-    make_query($conn,$stmt,$totalVolume,"Column");
-    $totalVolume .= "g/ml";
+$stmt = "SELECT SUM(amount) FROM projects";
+make_query($conn,$stmt,$totalVolume,"Column");
+$totalVolume .= "g/ml";
 
 //for Leaderboards
 $topBrands = "";//array of brand names[5]
-    $stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) AS pCount FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` DESC LIMIT 5";
-    make_query($conn,$stmt,$topBrands,"Row");
+$stmt = "SELECT `plasticBrand`,COUNT(`plasticBrand`) AS pCount FROM `projects` GROUP BY `plasticBrand` ORDER BY `machine` DESC LIMIT 5";
+make_query($conn,$stmt,$topBrands,"Row");
 
 $topColor = "";
-    $stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) AS pCount FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` ASC LIMIT 5";
-    make_query($conn,$stmt,$topColor,"Row");
+$stmt = "SELECT `plasticColor`,COUNT(`plasticColor`) AS pCount FROM `projects` GROUP BY `plasticColor` ORDER BY `plasticColor` ASC LIMIT 5";
+make_query($conn,$stmt,$topColor,"Row");
 
 $topMachines = "";
-    $stmt = "SELECT machine,COUNT(machine) AS pCount FROM projects GROUP BY machine ORDER BY pid DESC LIMIT 5";
-    make_query($conn,$stmt,$topMachines,"Row");
+$stmt = "SELECT machine,COUNT(machine) AS pCount FROM projects GROUP BY machine ORDER BY pid DESC LIMIT 5";
+make_query($conn,$stmt,$topMachines,"Row");
 
 //for user stats
 $totalMembers = "";
-    $stmt = "SELECT COUNT(rin) FROM users";
-    make_query($conn,$stmt,$totalMembers,"Column");
+$stmt = "SELECT COUNT(rin) FROM users";
+make_query($conn,$stmt,$totalMembers,"Column");
 
 $totalVolunteers = "";
-    $stmt = "SELECT COUNT(rin) FROM users WHERE type = \"volunteer\" OR type = \"admin\" OR type = \"TA\"";
-    make_query($conn,$stmt,$totalVolunteers,"Column");
+$stmt = "SELECT COUNT(rin) FROM users WHERE type = \"volunteer\" OR type = \"admin\" OR type = \"TA\"";
+make_query($conn,$stmt,$totalVolunteers,"Column");
 
 $numMales = "";
-    $stmt = "SELECT COUNT(gender) FROM users WHERE gender = \"male\" OR gender = \"m\"";
-    make_query($conn,$stmt,$numMales,"Column");
+$stmt = "SELECT COUNT(gender) FROM users WHERE gender = \"male\" OR gender = \"m\"";
+make_query($conn,$stmt,$numMales,"Column");
 $numFemales = "";
-    $stmt = "SELECT COUNT(gender) FROM users WHERE gender = \"female\" OR gender = \"f\" OR gender = \"femail\"";
-    make_query($conn,$stmt,$numFemales,"Column");
+$stmt = "SELECT COUNT(gender) FROM users WHERE gender = \"female\" OR gender = \"f\" OR gender = \"femail\"";
+make_query($conn,$stmt,$numFemales,"Column");
 $numOther = "";
-    $stmt = "SELECT COUNT(gender) FROM users WHERE gender != \"male\" AND gender != \"m\" AND gender != \"female\" AND gender != \"femail\" AND gender != \"f\""; //also handles null case
-    make_query($conn,$stmt,$numOther,"Column");
+$stmt = "SELECT COUNT(gender) FROM users WHERE gender != \"male\" AND gender != \"m\" AND gender != \"female\" AND gender != \"femail\" AND gender != \"f\""; //also handles null case
+make_query($conn,$stmt,$numOther,"Column");
 
 $MajorArray = ""; //array of Major,Count
-    $stmt = "SELECT major, COUNT(major) AS mCount from users GROUP BY major DESC";
-    make_query($conn,$stmt,$MajorArray,"Row");
+$stmt = "SELECT major, COUNT(major) AS mCount from users GROUP BY major DESC";
+make_query($conn,$stmt,$MajorArray,"Row");
 
 //for Bursar Info
 $bursarArray = ""; //array of name, rin, and amount due
-    $stmt = "SELECT firstName,lastName,rin,outstandingBalance FROM users GROUP BY rin ASC";
-    make_query($conn,$stmt,$bursarArray,"Row");
+$stmt = "SELECT firstName,lastName,rin,outstandingBalance FROM users GROUP BY rin ASC";
+make_query($conn,$stmt,$bursarArray,"Row");
 //=====================================================================
 
 //get date time for name convention
@@ -195,53 +194,12 @@ foreach($MajorArray as $row) {
 }
 
 //save the file
-$fileName = $current_date;
-$fileName .= "StatsReport.xlsx";
+$fileName = "Forge Stats";
+write_log($fileName);
+$fileName .= $current_date.".xlsx";
 $writer = new Xlsx($spreadsheet);
 $writer->save($fileName);
-//=================================================================================================
-//generate Spreadsheet based for Bursar
-$inputFileName = 'assets/Forge_Accounts_Receivable_Template.xlsx';
 
-// Load $inputFileName to a Spreadsheet object
-$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileName);
-
-//parse generated array
-$titleDate = "Generated ";
-$titleDate .= date('m-d-Y');
-
-//point spreadsheet at new location
-$spreadsheet->getActiveSheet()->setCellValue('A2', $titleDate);
-
-$count = 5;
-foreach($bursarArray as $row) {
-    //formatting
-    $fullName = $row['firstName'];
-    $fullName .= " ";
-    $fullName .= $row['lastName'];
-
-    $cell_A = "A";
-    $cell_A .= $count;
-    $cell_B = "B";
-    $cell_B .= $count;
-    $cell_C = "C";
-    $cell_C .= $count;
-
-    $spreadsheet->getActiveSheet()->setCellValue($cell_A, $fullName);
-    $spreadsheet->getActiveSheet()->setCellValue($cell_B, $row['rin']);
-    $spreadsheet->getActiveSheet()->setCellValue($cell_C, $row['outstandingBalance']);
-
-    $count++;
-    $cell_A = "";
-    $cell_B = "";
-    $cell_C = "";
-}
-
-//print new document
-$fileName2 = $current_date;
-$fileName2 .= "Forge_Accounts_Receivable.xlsx";
-$writer = new Xlsx($spreadsheet);
-$writer->save($fileName2);
 
 function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference is need to avoid Scope Drop Errors
     $temp = $conn->prepare($stmt);
@@ -263,9 +221,7 @@ function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference i
     setTimeout(function() {
 
         url = "<?php echo $fileName ?>";
-        url2 = "<?php echo $fileName2 ?>";
         downloadFile(url);
-        downloadFile(url2);
         document.location.href = "scripts/delete.php";
 
     }, 2000);

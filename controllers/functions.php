@@ -172,4 +172,43 @@ function generateMachineDropDown($inUse){
     }
 }
 
+function get_client_ip_server() {
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+        $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+
+    return $ipaddress;
+}
+
+function write_log(&$reportName){
+    $createDate = date('m-d-Y');
+    $timeStamp = date('m-d-Y__H_i_s');
+    $path = "logs/$createDate.log";
+    if(file_exists($path)) {
+        $fp = fopen($path, "a+");
+    }else{
+        $fp = fopen($path, "a+");
+        chmod($path,0770);
+
+    }
+    $ip = get_client_ip_server();
+    $author = getName();
+    $author .= getlastName();
+    $txt = "[$timeStamp][$ip]$author Generated $reportName Report\n";
+    fwrite($fp, $txt);
+    fclose($fp);
+    return;
+}
 ?>

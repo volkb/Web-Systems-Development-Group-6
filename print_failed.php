@@ -26,40 +26,16 @@
                     <h1 class="card-title text-center">Send Print Failure Email</h1>
                     <div class="container">
                         </div>
-
-                        <html class="row">
-
-                        <?php
-                        if(isset($_POST['submit'])){
-
-                            $to = $_POST['email'];
-                            $from = 'rpi.forge@gmail.com';
-                            $subject = "FAILED PRINT NOTIFICATION";
-                            $message = 'Your print has failed <b>your machine will be held for one hour, you must come in and restart it during that time</b> after that, the printer will be freed for use';
-                            $headers = "NO_REPLY@RPI_FORGE";
-                            $right = "Mail successfully sent";
-                            $wrong = "There was an error sending your email";
-
-
-                            if (mail($to,$subject,$message,$headers))
-                                echo "<script type='text/javascript'>alert('$right');</script>";
-//                              echo "Mail successfully sent";
-                            else
-                                echo "<script type='text/javascript'>alert('$wrong');</script>";
-                            // You can also use header('Location: thank_you.php'); to redirect to another page.
-                        }
-                        ?>
-
-
-                        <form class="form-horizontal" role="form" method="post" action="">
-
+                        <form class="form-horizontal" role="form" method="post" action="controllers/email_controller.php">
                             <div class="form-group">
                                 <label for="email" class="col-sm-2 control-label">Email</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="example@domain.com">
+                                    <select class="custom-select" name="machine">
+                                        <option selected disabled>Select The Failed Machine</option>
+                                        <?php generateMachineDropDown(1); ?>
+                                    </select>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-sm-5 col-sm-offset-2">
                                     <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">

@@ -88,8 +88,13 @@
               echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
               echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
               // Heuristic Report as .xls
-              echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
-
+            echo "<div class=\"btn-group\">";
+            echo "  <button type=\"button\" class=\"btn btn-lg btn-success dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Reports</button>";
+            echo "  <div class=\"dropdown-menu\">";
+            echo "    <a class=\"dropdown-item\" href=\"acct_rec_report.php\">Accounts Recievable</a>";
+            echo "    <a class=\"dropdown-item\" href=\"usage_report.php\">Usage Report</a>";
+            echo "  </div>";
+            echo "</div>";
             echo "</div>";
             echo "<div class ='row py-2'>";
               echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
@@ -111,7 +116,13 @@
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             // Heuristic Report as .xls
-            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
+            echo "<div class=\"btn-group\">";
+            echo "  <button type=\"button\" class=\"btn btn-lg btn-success dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Reports</button>";
+            echo "  <div class=\"dropdown-menu\">";
+            echo "    <a class=\"dropdown-item\" href=\"acct_rec_report.php\">Accounts Recievable</a>";
+            echo "    <a class=\"dropdown-item\" href=\"usage_report.php\">Usage Report</a>";
+            echo "  </div>";
+            echo "</div>";
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
             echo "</div>";
             echo "<div class='row py-2'>";

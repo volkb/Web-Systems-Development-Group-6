@@ -43,8 +43,11 @@ if(isset($_COOKIE['FORGE-SESSION'])){
                     <input type="password" class="form-control" name="password" placeholder="Enter Password" required />
                   </div>
 
-                  <div class="text-center">
+                  <div class="text-center" id="submit">
                     <button class="btn btn-primary btn-clock text-uppercase" type="submit">Sign in</button>
+                  </div>
+                  <div class="text-center" style="display: none" id="verify">
+                      <p>Please Verify Your Email <a href="controllers/auto_verify_email.php">Resend Email</a></p>
                   </div>
                 </form>
                 </div>
