@@ -1,5 +1,6 @@
 <?php
 include_once "db_connector.php";
+include_once 'verify-email.php';
 $conn = dbConnect();
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
   //User Information
@@ -28,7 +29,13 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       $stmt->execute();
       //Makes a cookie and gives that to the user for future verification
       setcookie("FORGE-SESSION",$sessionID, time() + (24*60*60),'/');
-      header("Location: ../index.php");
+      if(checkVerify() == 1) {
+          header("Location: ../index.php");
+      }else{
+          echo "<script>
+      window.location.replace(\" ../404.html \");
+      </script>";
+      }
     }else{
       echo "<script>
       alert('Your rcsID or password is incorrect!');
@@ -37,5 +44,5 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     }
   }
 }else{
-  die("ERROR");
+    die("ERROR");
 }

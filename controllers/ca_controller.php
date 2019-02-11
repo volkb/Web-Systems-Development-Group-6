@@ -1,5 +1,6 @@
 <?php
 include_once "db_connector.php";
+include_once 'email_functions.php';
 
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
     if ($_POST['password'] != $_POST['password2']){
@@ -31,8 +32,8 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       echo "<script type='text/javascript'>alert('That rcsID is unavailable!');</script>";
       exit();
     }
-    $stmt = $conn->prepare('INSERT INTO users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance)
-    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10)');
+    $stmt = $conn->prepare('INSERT INTO users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance,verified)
+    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10,0)');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
@@ -42,6 +43,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $stmt->bindParam(':gender',$gender_clean);
     $stmt->bindParam(':major',$major_clean);
     $stmt->execute();
+    sendConfirmation();
     header("Location: ../myforge.php");
     exit();
 }else{
