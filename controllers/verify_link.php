@@ -1,7 +1,6 @@
 <?php
 require_once 'functions.php';
 require_once 'db_connector.php';
-function checkVerify(){
     try {
         if (isset($_COOKIE['FORGE-SESSION'])) {
             $sessionID = $_COOKIE['FORGE-SESSION'];
@@ -20,17 +19,16 @@ function checkVerify(){
 
             //if user is already verified, return 1 else update column in DB
             if ($verified_result == 1) {
-                return 1;
+                header("Location: ../myforge.php");
             } else {
-//            $update = $conn->prepare("UPDATE users SET verified= 1 WHERE rin = :rin");
-//            $update->bindParam(':rin', $rin_result);
-//            $update->execute();
-                return 0;
+                $update = $conn->prepare("UPDATE users SET verified= 1 WHERE rin = :rin");
+                $update->bindParam(':rin', $rin_result);
+                $update->execute();
+                header("Location: ../myforge.php");
             }
         }
     }catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
     return 404;
-}
 ?>
