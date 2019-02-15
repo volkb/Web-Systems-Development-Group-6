@@ -65,7 +65,7 @@
                           $name = $_POST['name'];
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
-                          $headers = "From: " . $from;
+                          $headers = "From: " . $name;
                           $right = "Mail successfully sent";
                           $wrong = "There was an error sending your email.  Please try again later";
 
