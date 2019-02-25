@@ -161,13 +161,27 @@ function emailMachine($machine){
 
 function generateMachineDropDown($inUse){
     $connection = dbconnect();
-    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE inUse = :inUse');
+    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE inUse = :inUse AND status = 1');
     $stmt->bindParam(':inUse',$inUse);
     $stmt->execute();
     $machines = $stmt->fetchall();
     foreach($machines as $machine){
         $item = "<option value=" . "\"" . $machine["machineName"] . "\"" . ">";
         $item .= $machine["machineName"];
+        $item .= "</option>";
+        echo $item;
+    }
+}
+
+function generateTotalMachineDropDown(){
+    $connection = dbconnect();
+    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE 1');
+    $stmt->execute();
+    $machines = $stmt->fetchall();
+    foreach($machines as $machine){
+        $item = "<option value=" . "\"" . $machine["machineName"] . "\"" . ">";
+        $item .= $machine["machineName"];
+        $item .= "</option>";
         echo $item;
     }
 }
