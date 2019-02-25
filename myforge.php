@@ -84,7 +84,12 @@
             <div class='card-body'>
             <h1 class='card-title text-center'>Admin Panel</h1>";
               echo "<div class='row py-2'>";
-              echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+              echo "<div class='col-md-3 py-1 text-center dropdown show'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+              echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
+              echo "<a class='dropdown-item' href='print_form.php'>Use a Machine</a>";
+              echo "<a class='dropdown-item' href='edit_machine.php'>Maintain Machines</a>";
+              echo "</div>";
+              echo "</div>";
               echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
               echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
               // Heuristic Report as .xls
@@ -111,9 +116,13 @@
           <div class='card shadow-lg my-3'>
             <div class='card-body'>
             <h1 class='card-title text-center'>Super Admin Panel</h1>";
-
             echo "<div class='row py-2'>";
-            echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+            echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
+            echo "<a class='dropdown-item' href='print_form.php'>Use a Machine</a>";
+            echo "<a class='dropdown-item' href='edit_machine.php'>Maintain Machines</a>";
+            echo "</div>";
+            echo "</div>";
             echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             // Heuristic Report as .xls
             echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
