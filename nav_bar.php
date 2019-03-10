@@ -4,6 +4,7 @@
   <div class="container d-flex w-100 mx-auto my-auto flex-column align-middle">
     <header class="masthead mb-auto">
       <div class="inner">
+          <!--        for update purposes-->
         <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
         <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
           <a class="nav-link text-muted" href="index.php">Home</a>

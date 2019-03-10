@@ -9,7 +9,7 @@
 <body class="bg-secondary">
   <div class="bg-secondary pt-3 p-2">
       <?php include 'nav_bar.php';?>
-
+<!--        for update purposes-->
       <div class="container">
           <div class="row">
               <div class="col-md-12">
