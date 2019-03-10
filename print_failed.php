@@ -32,10 +32,9 @@
                         if(isset($_POST['submit'])){
 
                             $to = $_POST['email'];
-                            $from = 'rpi.forge@gmail.com';
                             $subject = "FAILED PRINT NOTIFICATION";
                             $message = 'Your print has failed <b>your machine will be held for one hour, you must come in and restart it during that time</b> after that, the printer will be freed for use';
-                            $headers = "NO_REPLY@RPI_FORGE";
+                            $headers .= 'From: NO_REPLY@RPI_FORGE <rpi.forge@gmail.com>' . "\r\n";
                             $right = "Mail successfully sent";
                             $wrong = "There was an error sending your email";
 
