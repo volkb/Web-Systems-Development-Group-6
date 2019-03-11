@@ -117,7 +117,7 @@
             <div class='card-body'>
             <h1 class='card-title text-center'>Super Admin Panel</h1>";
             echo "<div class='row py-2'>";
-            echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+            echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Machine Forms</a>";
             echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
             echo "<a class='dropdown-item' href='print_form.php'>Use a Machine</a>";
             echo "<a class='dropdown-item' href='edit_machine.php'>Maintain Machines</a>";

@@ -2,7 +2,7 @@
 
 include_once "db_connector.php";
 if(isset($_POST['rcsID']) && isset($_POST['rin'])){
-  
+
   /**
    * if password doesn't need to be changed
    */
@@ -44,7 +44,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $rin = $_POST['rin'];
     $rcsID = $_POST['rcsID'];
     $perms = $_POST['perms'];
-    
+
     $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
@@ -55,7 +55,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $stmt->bindParam(':type',$perms);
     $stmt->execute();
     header("Location: ../myforge.php");
-    exit(); 
+    exit();
   }
 }else{
   die("ERROR");
