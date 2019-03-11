@@ -52,7 +52,7 @@
               </div>
               <div class="row">
                 <div class="text-center container m-auto p-3">
-                    <h2 class="text-warning font-weight-bold" >WeR Gold</h2>
+                    <h2 class="text-warning font-weight-bold" >weR Gold</h2>
                     <p class="roboto">Support the Forge at weR Gold!</p>
                     <a class="btn btn-primary btn-warning" href="https://impact.rpi.edu/project/13495" target="_blank">Donate</a>
                 </div>
