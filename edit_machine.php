@@ -55,32 +55,32 @@
                     <h1 class="card-title text-center">Add A Machine</h1>
                     <form action="controllers/add_hardware_controller.php" method="post">
                         <div class="form-group">
-                            <input type="text" id="addMachineName" class="form-control purple-focus-border" name="addMachineName" placeholder="Machine Name" required/>
+                            <label>Machine Name:</label>
+                            <input type="text" id="addName" class="form-control purple-focus-border" name="addName" placeholder="Machine Name" required/>
                         </div>
 
                         <div class="form-group">
-                            <label>Filament Status: </label>
-                            <select class="custom-select purple-focus-border" name="usesPlastic" id="usesPlastic" required>
-                                <option disabled selected class="text-secondary" id="defaultStatus">Does This Machine Use Filament?</option>
-                                <option value='1'>Yes</option>
-                                <option value = '0'>No</option>
+                            <label>Uses Plastic?</label>
+                            <select class="custom-select purple-focus-border" name="addPlastic" id="addPlastic" required>
+                                <option disabled selected>Plastic Usage</option>
+                                <option type="number" value ='0'>No</option>
+                                <option type="number" value ='1'>Yes</option>
                             </select>
                         </div>
 
-                        <div id="AddMachineMaterialsWrapper" class="d-none">
-                            <div class="form-group">
-                                <label>Multiple Extrusion Status (Does This Machine Use More Than One Filament/Extruder):</label>
-                                <select class="custom-select purple-focus-border" name="addMaterials" id="addMaterials">
-                                    <option disabled selected class="text-secondary" id="add_mult_ext" value="null">Multiple Extrusion Status</option>
-                                    <option value="1" id="mult_ext_true">Yes</option>
-                                    <option value="0" id="mult_ext_false">No</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label>Multiple Extrusions?</label>
+                            <select class="custom-select purple-focus-border" name="addExt" id="addExt">
+                                <option disabled selected>Multiple Extrusion Status</option>
+                                <option value="0" >No</option>
+                                <option value="1" >Yes</option>
+                            </select>
+                        </div>
 
-                            <div class="form-group d-none" id="add_num_ext">
-                                <label>Max Number of Extrusions Supported:</label>
-                                <input type="number" id="add_num_ext_val" value="1" min="1" max="99" class="form-control purple-focus-border" name="add_num_ext" placeholder="Max Number of Extrusions Supported"/>
-                            </div>
+                        <div class="form-group">
+                            <label>Max Number of Extrusions Supported:</label>
+                            <input type="number" id="addNum_ext" value="0" min="0" max="99" class="form-control purple-focus-border" name="addNum_ext" placeholder="Max Number of Extrusions Supported"/>
+                            <small class="form-text text-muted ml-1"> 0 if no multiple extrustions</small>
                         </div>
 
                         <div class="text-center">
