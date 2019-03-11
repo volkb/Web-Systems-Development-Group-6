@@ -104,35 +104,53 @@
                     <form action="controllers/edit_hardware_controller.php" method="post">
 
                         <div class="form-group">
-                            <label>Set Machine Status:</label>
-                            <select class="custom-select" name="service" id="service" required>
-                                <option disabled selected class="text-secondary" id="defaultStatus">Set Machine Status</option>
-                                <option value='1' id="inService">In Service</option>
-                                <option value = '0' id="OOS">Out Of Service</option>
+                            <label>Machine Name:</label>
+                            <input type = "text" id="name" name="name" class="form-control green-focus-border" placeholder="Machine Name" required readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Machine Being Used?</label>
+                            <select class="form-control green-focus-border" id="usage" name="usage" required>
+                              <option disabled selected>Usage</option>
+                              <option type="number" value = '0'>No</option>
+                              <option type="number" value = '1'>Yes</option>
                             </select>
                         </div>
 
-                        <div class="form-group d-none">
-                            <input type="hidden" id="machineName" name="machineName" value="404">
+                        <div class="form-group">
+                            <label>Machine Status:</label>
+                            <select class="form-control green-focus-border" name="status" id="status" required>
+                                <option disabled selected>Machine Status</option>
+                                <option type="number" value='0'>Out Of Service</option>
+                                <option type="number"value='1'>Working</option>
+                            </select>
                         </div>
 
-                        <div id="materialsWrapper" class="d-none">
-                            <div class="form-group">
-                                <label>Multiple Extrusion Status:</label>
-                                <select class="custom-select" name="Materials" id="Materials">
-                                    <option disabled selected class="text-secondary" id="mult_ext">Multiple Extrusion Status</option>
-                                    <option value="1" id="mult_ext_true">Yes</option>
-                                    <option value="0" id="mult_ext_false">No</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group d-none" id="num_ext">
-                                <label>Max Number of Extrusions Supported:</label>
-                                <input type="number" id="num_ext_val" min="1" max="99" class="form-control" name="num_ext" placeholder="Max Number of Extrusions Supported"/>
-                            </div>
+                        <div class="form-group">
+                            <label>Uses Plastic?</label>
+                            <select class="form-control green-focus-border" name="plastic" id="plastic" required>
+                                <option disabled selected>Plastic Usage</option>
+                                <option type="number" value='0'>No</option>
+                                <option type="number" value='1'>Yes</option>
+                            </select>
                         </div>
 
-                        <div class="text-center">
+                        <div class="form-group">
+                            <label>Multiple Extrusions?</label>
+                            <select class="form-control green-focus-border" name="ext" id="ext" required>
+                                <option disabled selected>Multiple Extrusion Status</option>
+                                <option type="number" value="0">No</option>
+                                <option type="number" value="1">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Max Number of Extrusions:</label>
+                            <input type="number" min="0" max="99"  id="num_ext" class="form-control green-focus-border" name="num_ext" placeholder="Max Number of Extrusions Supported"/>
+                            <small class="form-text text-muted ml-1"> 0 if no multiple extrustions</small>
+                        </div>
+
+                        <div class="form-group text-center">
                             <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Save</button>
                         </div>
                     </form>
