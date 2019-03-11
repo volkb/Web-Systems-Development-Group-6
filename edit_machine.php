@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js bg-light" lang="">
+<html class="no-js bg-secondary" lang="">
 
 <head>
     <?php include_once 'controllers/functions.php';?>
