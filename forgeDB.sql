@@ -43,6 +43,7 @@ CREATE TABLE `users` (
   `gender` varchar(50),
   `major` varchar(255) NOT NULL,
   `outstandingBalance` float NOT NULL,
+  `verified` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`rin`)
 );
 
