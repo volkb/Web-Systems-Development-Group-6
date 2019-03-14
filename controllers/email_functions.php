@@ -18,6 +18,7 @@ function sendConfirmation(){
     $mail = new PHPMailer;
     $mail->setFrom('NO_REPLY@TheForge.rpi.edu', 'Mailer');
     $mail->addAddress($emailaddr,$name);
+    $mail->isHTML(true);
     $mail->Subject  = 'Welcome to The Forge!';
     $mail->Body     = $page;
     if(!$mail->send()) {
