@@ -19,6 +19,7 @@
                   <a class="nav-link text-center m-auto p-1" href="hours.php">Hours</a>
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
+                  <a class="nav-link text-center m-auto p-1" href="challenge.php">Forge Challenge</a>
                   <a class="nav-link text-center m-auto p-1" href="contact.php">Contact</a>
               <?php
               if(isset($_COOKIE['FORGE-SESSION'])){
