@@ -13,7 +13,7 @@ if(isset($_POST['machine'])) {
     $machine_in = $_POST['machine'];
     //grab the email from that RIN
     $conn = dbConnect();
-    $machineuser = $conn->prepare("SELECT userID FROM projects WHERE machine = :machine");
+    $machineuser = $conn->prepare("SELECT userID FROM projects WHERE machine = :machine ORDER BY `startTime` DESC LIMIT 1");
     $machineuser->bindParam(':machine',$machine_in);
     $machineuser->execute();
     //now we have the rin
