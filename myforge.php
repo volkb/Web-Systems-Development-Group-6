@@ -71,7 +71,7 @@
             echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
             //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<div class='col-md-3 py-1 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</button></div>";
+            echo "<div class='col-md-3 py-1 text-center'><a type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</a></div>";
             echo "</div>
             </div>
           </div>
@@ -104,7 +104,7 @@
               echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
               echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='edit_user.php'>Edit Account</a></div>";
               //display a pop-up asking for failed machine, then pull user info and get email to send
-              echo "<div class='col-md-4 py-1 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</button></div>";
+              echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</a></div>";
               echo "</div>
         </div>
       </div>
