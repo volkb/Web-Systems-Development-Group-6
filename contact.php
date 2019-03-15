@@ -135,10 +135,11 @@
 
                               <div class="col-md-6 p-4">
                                   <h3 class="">Support Us</h3>
-                                      <a href="https://impact.rpi.edu/project/13495" target="_blank" class="virtual_link">
+                                  <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform!  All contributions made to our cause will be matched by an anonymous donor.  Help us reach our current goal of $15,000vayne s! </p>
 
-                                      </a>
+                                  <a class="btn btn-primary" href="https://impact.rpi.edu/project/13495">weR Gold </a>
                                   <div >
+
 <!--                                      border: 2px solid red-->
                                       <img src="weR.jpg" title="weRImage" style="margin-top: 20px; width:100%;" alt="weRImage" />
                                     </div>
