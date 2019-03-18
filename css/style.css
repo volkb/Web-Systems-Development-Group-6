@@ -42,6 +42,16 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.24);
 }
 
+.status-bar-card-height{
+  display:block;
+  height: 275px;
+  width: 100%;
+}
+
+.ldBar.no-label .ldBar-label {
+display: none;
+}
+
 /* Removes up and down arrows on 'number' form input fields */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -58,6 +68,7 @@ select {
     text-indent: 1px;
     text-overflow: '';
 }
+
 
 
 /*
