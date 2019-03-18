@@ -21,6 +21,7 @@
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
                   <a class="nav-link text-center m-auto p-1" href="challenge.php">Forge Challenge</a>
                   <a class="nav-link text-center m-auto p-1" href="contact.php">Contact</a>
+                  <a class="nav-link text-center m-auto p-1" href="forum/index.php"><i>Blacksmith</i></a>
               <?php
               if(isset($_COOKIE['FORGE-SESSION'])){
                   echo "<a class=\"nav-link text-center m-auto p-1\" href=\"myforge.php\">My Forge</a>";
