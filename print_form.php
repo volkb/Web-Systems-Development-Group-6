@@ -64,24 +64,24 @@ include "controllers/functions.php";
                     <input type="text" class="form-control required" name="color" id="color"/>
                   </div>
 
-                  <div class="form-group">
-                      <label for="time">Estimated time to complete (hours and minutes)</label>
-                      <div style="display: block">
-                          <div class="row">
-                              <div class="col-md-5">
-                                  <div class="input-group">
-                                      <label style="margin-right:10px" for="hours">Hr</label>
-                                      <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
-                                      <label style="margin-right:10px" for="minutes">Min</label>
-                                      <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+
                 </div>
 
-
+                <div class="form-group">
+                    <label for="time">Estimated time to complete</label>
+                    <div style="display: block">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <label style="margin-right:10px" for="hours">Hr</label>
+                                    <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
+                                    <label style="margin-right:10px" for="minutes">Min</label>
+                                    <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
 
