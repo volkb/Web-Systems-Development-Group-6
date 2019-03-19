@@ -15,13 +15,19 @@
               <!-- <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand d-none d-sm-block"/></a> -->
               <nav class="nav nav-masthead justify-content-center roboto m-auto" id="mainNav">
                   <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>
-                  <a class="nav-link text-center m-auto p-1" href="equipment.php">Equipment</a>
-                  <a class="nav-link text-center m-auto p-1" href="hours.php">Hours</a>
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
-                  <a class="nav-link text-center m-auto p-1" href="challenge.php">Forge Challenge</a>
-                  <a class="nav-link text-center m-auto p-1" href="contact.php">Contact</a>
-                  <a class="nav-link text-center m-auto p-1" href="forum/index.php"><i>Blacksmith</i></a>
+                  <!-- <a class="nav-link text-center m-auto p-1" href="challenge.php">Forge Challenge</a> -->
+                  <a class="nav-link text-center m-auto p-1" href="forum/index.php">Blacksmith</a>
+                  <a class="nav-link text-center m-auto p-1 dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Info
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="hours.php">Hours</a>
+                    <a class="dropdown-item" href="contact.php">Contact</a>
+                    <a class="dropdown-item" href="equipment.php">Equipment</a>
+                  </div>
+
               <?php
               if(isset($_COOKIE['FORGE-SESSION'])){
                   echo "<a class=\"nav-link text-center m-auto p-1\" href=\"myforge.php\">My Forge</a>";
@@ -133,4 +139,5 @@
     </div>
     <?php include 'footer.php';?>
   </body>
+  <?php include 'scripts.php';?>
 </html>
