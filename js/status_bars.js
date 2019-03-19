@@ -5,6 +5,9 @@ function getName(users, rin){
     if (users[i]['rin'] == rin){
       name = users[i]['firstName'] + " " + users[i]['lastName'];
     }
+    if (name.length > 14){
+      name = users[i]['firstName'] + " " + users[i]['lastName'].substring(0, 1) + ".";
+    }
   }
   return name;
 }
