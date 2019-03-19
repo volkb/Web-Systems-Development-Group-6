@@ -34,10 +34,10 @@
 	define('QA_MYSQL_PORT', '3306');
 */
 
-	define('QA_MYSQL_HOSTNAME', '127.0.0.1');
-	define('QA_MYSQL_USERNAME', 'your-mysql-username');
-	define('QA_MYSQL_PASSWORD', 'your-mysql-password');
-	define('QA_MYSQL_DATABASE', 'your-mysql-db-name');
+	define('QA_MYSQL_HOSTNAME', 'db.union.rpi.edu');
+	define('QA_MYSQL_USERNAME', 'forge_forumAdmin');
+	define('QA_MYSQL_PASSWORD', 'f9\',PnTqKW}wb39}');
+	define('QA_MYSQL_DATABASE', 'forge_forums');
 
 /*
 	Ultra-concise installation instructions:
