@@ -135,7 +135,7 @@
 
                               <div class="col-md-6 p-4">
                                   <h3 class="">Support Us</h3>
-                                  <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform!  All contributions made to our cause will be matched by an anonymous donor.  Help us reach our current goal of $15,000vayne s! </p>
+                                  <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform!  All contributions made to our cause will be matched by an anonymous donor.  Help us reach our current goal of $15,000! </p>
 
                                   <a class="btn btn-primary" href="https://impact.rpi.edu/project/13495">weR Gold </a>
                                   <div >
