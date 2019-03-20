@@ -10,7 +10,10 @@ require '../vendor/autoload.php';
 include_once 'db_connector.php';
 include_once 'functions.php';
 if(isset($_POST['machine'])) {
+    date_default_timezone_set("America/New_York");
+    $eta = date("Y-m-d H:i:s",time() + 3600);
     $machine_in = $_POST['machine'];
+    setProjectFailed($machine_in,$eta);
     //grab the email from that RIN
     $conn = dbConnect();
     $machineuser = $conn->prepare("SELECT userID FROM projects WHERE machine = :machine ORDER BY `startTime` DESC LIMIT 1");
