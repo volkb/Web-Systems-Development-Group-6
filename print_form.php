@@ -15,7 +15,6 @@ include "controllers/functions.php";
 </head>
 
 
-
 <body class="bg-light">
 <div class="bg-light pt-3 p-2">
     <?php include 'nav_bar.php'?>
