@@ -218,7 +218,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Plastic Volume Sold:</th>";
             echo"<td>";
-            echo round($total_grams,2);
+            echo $total_grams;
             echo " g/mL";
             echo"</td>";
         echo"</tr>";
