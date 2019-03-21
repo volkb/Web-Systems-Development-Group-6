@@ -197,8 +197,8 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Volunteer Conversion Rate:</th>";
             echo"<td>";
-            echo $conversion_rate;
-            echo"%";
+            echo round($conversion_rate,2);
+            echo" %";
             echo"</td>";
         echo"</tr>";
     echo "</tbody>";
@@ -218,8 +218,8 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Plastic Volume Sold:</th>";
             echo"<td>";
-            echo $total_grams;
-            echo"g/mL";
+            echo round($total_grams,2);
+            echo " g/mL";
             echo"</td>";
         echo"</tr>";
     echo "</tbody>";
@@ -240,8 +240,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Top 5 Colors:</th>";
             echo"<td>";
-            $p_col = stringify($popular_colors,"colors");
-            echo $p_col;
+            echo stringify($popular_colors,"colors");
             echo"</td>";
         echo"</tr>";
     echo "</tbody>";
