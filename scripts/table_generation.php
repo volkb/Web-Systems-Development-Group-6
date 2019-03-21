@@ -219,7 +219,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
             echo"<th scope=\"row\">Plastic Volume Sold:</th>";
             echo"<td>";
             echo $total_grams;
-            echo"g/mL";
+            echo " g/mL";
             echo"</td>";
         echo"</tr>";
     echo "</tbody>";
