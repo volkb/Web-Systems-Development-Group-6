@@ -73,9 +73,9 @@ include "controllers/functions.php";
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <label style="margin-right:10px" for="hours">Hr</label>
-                                    <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
+                                    <input style="margin-right:10px" type="number" class="form-control" id="hours" name="hours" min="0" max="72" required/>
                                     <label style="margin-right:10px" for="minutes">Min</label>
-                                    <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
+                                    <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320" required/>
                                 </div>
                             </div>
                         </div>
