@@ -5,6 +5,30 @@ function getPrettyDate($date){
   //return date_format($date,"h:i A \- j M Y");
 }
 
+function formatPlastic($row, $info){
+    $hasPlastic = checkPlastic($row['machine']);
+    if($hasPlastic == 1) {
+      if($info == 'brand'){
+        $ret_str = $row['plasticBrand']; //Makerbot
+      }else if($info == 'type'){
+        $ret_str .= $row['plastic']; //Makerbot PLA
+      }else if ($info == 'color'){
+        $ret_str .= $row['plasticColor']; //Makerbot PLA, Red
+      }else if ($info == 'amount'){
+        $ret_str .= $row['amount']; //Makerbot PLA, Red - 300
+        if($row['machine'] == "Form 1+"){
+            $ret_str .= "mL"; //Makerbot PLA, Red - 300mL,
+        }else {
+            $ret_str .= "g"; //Makerbot PLA, Red - 300g,
+        }
+        $ret_str .= "."; //Makerbot PLA, Red - PLA, 300
+      }
+    }else{
+        $ret_str = "";
+    }
+    return $ret_str;
+}
+
 function generateSpecificTable($class, $id){//given a user, generate a recent project table
     if(isset($_COOKIE['FORGE-SESSION'])){
         $sessionID = $_COOKIE['FORGE-SESSION'];
@@ -33,7 +57,10 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
                     echo"<th scope=\"col\">#</th>";
                     echo"<th scope=\"col\">Date</th>";
                     echo"<th scope=\"col\">Machine</th>";
-                    echo"<th scope=\"col\">Plastic Info</th>";
+                    echo"<th scope=\"col\">Plastic Brand</th>";
+                    echo"<th scope=\"col\">Type</th>";
+                    echo"<th scope=\"col\">Color</th>";
+                    echo"<th scope=\"col\">Amount</th>";
                     echo"<th scope=\"col\">Cost</th>";
                 echo"</tr>";
             echo"</thead>";
@@ -56,9 +83,27 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
                 echo $row['machine'];
                 echo"</td>";
 
-                //plasticInfo
+                //plasticBrand
                 echo"<td>";
-                $info = formatPlastic($row);
+                $info = formatPlastic($row,'brand');
+                echo $info;
+                echo"</td>";
+
+                //Type
+                echo"<td>";
+                $info = formatPlastic($row,'type');
+                echo $info;
+                echo"</td>";
+
+                //Color
+                echo"<td>";
+                $info = formatPlastic($row,'color');
+                echo $info;
+                echo"</td>";
+
+                //Amount
+                echo"<td>";
+                $info = formatPlastic($row,'amount');
                 echo $info;
                 echo"</td>";
 
@@ -81,28 +126,7 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
 
 }
 
-function formatPlastic($row){
-    $hasPlastic = checkPlastic($row['machine']);
-    if($hasPlastic == 1) {
-        $ret_str = $row['plasticBrand']; //Makerbot
-        $ret_str .= " "; //Makerbot
-        $ret_str .= $row['plastic']; //Makerbot PLA
-        $ret_str .= ", "; //Makerbot PLA,
-        $ret_str .= $row['plasticColor']; //Makerbot PLA, Red
-        $ret_str .= " - "; //Makerbot PLA, Red -
-        $ret_str .= $row['amount']; //Makerbot PLA, Red - 300
-        if($row['machine'] == "Form 1+"){
-            $ret_str .= "mL"; //Makerbot PLA, Red - 300mL,
-        }else {
-            $ret_str .= "g"; //Makerbot PLA, Red - 300g,
-        }
-        $ret_str .= "."; //Makerbot PLA, Red - PLA, 300
 
-    }else{
-        $ret_str = "None";
-    }
-    return $ret_str;
-}
 
 function checkPlastic($equipment){
     //echo $equipment;
