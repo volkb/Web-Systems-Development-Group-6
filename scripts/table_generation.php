@@ -1,4 +1,10 @@
 <?php
+function getPrettyDate($date){
+  $newDate = DateTime::createFromFormat('Y-m-d H:i:s',$date);
+  return $newDate->format('F j - h:i A');
+  //return date_format($date,"h:i A \- j M Y");
+}
+
 function generateSpecificTable($class, $id){//given a user, generate a recent project table
     if(isset($_COOKIE['FORGE-SESSION'])){
         $sessionID = $_COOKIE['FORGE-SESSION'];
@@ -42,7 +48,7 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
 
                 //Date
                 echo"<td>";
-                echo $row['startTime'];
+                echo getPrettyDate($row['startTime']);
                 echo"</td>";
 
                 //Machine
