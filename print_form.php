@@ -25,7 +25,7 @@ include "controllers/functions.php";
           <div class="card shadow-lg my-5">
             <div class="card-body">
               <h1 class="card-title text-center">Print Job Form</h1>
-              <form action="controllers/print_form_controller.php" method="post">
+              <form action="controllers/print_form_controller.php" name ='print_form' method="post">
 
                 <label for="machine" id="machinelabel">Machine Type:</label>
                 <select name="machine" id="machine" required>
@@ -44,8 +44,8 @@ include "controllers/functions.php";
                   <div class="form-group">
                     <label for="amount" id="amountlabel">Amount of plastic (g)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
-                    <small id="amountsmall" class="form-text text-muted ml-1 required"> (0 if using your own material or reprint)</small>
-                    <small id="printprice" class="form-text text-muted ml-1 required"></small>
+                    <small id="amountsmall" class="form-text text-muted ml-1"> (0 if using your own material or reprint)</small>
+                    <small id="printprice" class="form-text text-muted ml-1"></small>
                   </div>
 
                   <div class="form-group">
