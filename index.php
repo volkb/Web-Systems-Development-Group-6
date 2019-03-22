@@ -18,7 +18,7 @@
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
                   <a class="nav-link text-center m-auto p-1" href="forum/index.php">Blacksmith</a>
-                  <a class="nav-link text-center m-auto p-1" href="challenge.php">Forge Challenge</a>
+                  <a class="nav-link text-center m-auto p-1" href="challenge.php">Challenge</a>
                   <a class="nav-link text-center m-auto p-1 dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Info
                   </a>
