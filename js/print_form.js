@@ -54,9 +54,13 @@ $(document).ready(function(){
     $("#machine").trigger("change");
 
     // This handles making something required or not based on if it is visible
-    $("form").change(function(){
-        $(this).prop('required', function(){
-            return  $(this).is(':visible');
-         });
+    $("#machine").change(function(){
+      $('.required').each(function() {
+        if ($(this).is(":visible")){
+          $(this).attr("required", "true");
+        }else {
+          $(this).attr("required", "false");
+        }
+      });
     });
  });

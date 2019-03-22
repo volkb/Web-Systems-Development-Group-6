@@ -15,7 +15,6 @@ include "controllers/functions.php";
 </head>
 
 
-
 <body class="bg-light">
 <div class="bg-light pt-3 p-2">
     <?php include 'nav_bar.php'?>
@@ -26,7 +25,7 @@ include "controllers/functions.php";
           <div class="card shadow-lg my-5">
             <div class="card-body">
               <h1 class="card-title text-center">Print Job Form</h1>
-              <form action="controllers/print_form_controller.php" method="post">
+              <form action="controllers/print_form_controller.php" name ='print_form' method="post">
 
                 <label for="machine" id="machinelabel">Machine Type:</label>
                 <select name="machine" id="machine" required>
@@ -45,8 +44,8 @@ include "controllers/functions.php";
                   <div class="form-group">
                     <label for="amount" id="amountlabel">Amount of plastic (g)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
-                    <small id="amountsmall" class="form-text text-muted ml-1 required"> (0 if using your own material or reprint)</small>
-                    <small id="printprice" class="form-text text-muted ml-1 required"></small>
+                    <small id="amountsmall" class="form-text text-muted ml-1"> (0 if using your own material or reprint)</small>
+                    <small id="printprice" class="form-text text-muted ml-1"></small>
                   </div>
 
                   <div class="form-group">
@@ -74,9 +73,9 @@ include "controllers/functions.php";
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <label style="margin-right:10px" for="hours">Hr</label>
-                                    <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
+                                    <input style="margin-right:10px" type="number" class="form-control" id="hours" name="hours" min="0" max="72" required/>
                                     <label style="margin-right:10px" for="minutes">Min</label>
-                                    <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
+                                    <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320" required/>
                                 </div>
                             </div>
                         </div>

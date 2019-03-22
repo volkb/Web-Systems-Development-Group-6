@@ -19,6 +19,7 @@
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
                   <a class="nav-link text-center m-auto p-1" href="forum/index.php">Blacksmith</a>
                   <a class="nav-link text-center m-auto p-1" href="challenge.php">Challenge</a>
+                  <a class="nav-link text-center m-auto p-1" href="forum/index.php" target="_blank">Forum</a>
                   <a class="nav-link text-center m-auto p-1 dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Info
                   </a>
@@ -94,7 +95,7 @@
             </div>
             <div class="col-sm-9">
               <h3 class="">Find Us Physically</h3>
-              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
+              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. If the sign is flipped to OPEN, come on in.</p>
               <a class="btn btn-primary" href="hours.php">Hours of Operation
                 <br> </a>
             </div>
