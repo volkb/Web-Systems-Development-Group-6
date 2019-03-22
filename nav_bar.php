@@ -12,7 +12,7 @@
           <a class="nav-link text-muted" href="gallery.php">Gallery</a>
           <a class="nav-link text-muted" href="news.php">News</a>
           <!-- <a class="nav-link text-muted" href="challenge.php">Forge Challenge</a> -->
-          <a class="nav-link text-muted" href="forum/index.php">Blacksmith</a>
+          <a class="nav-link text-muted" href="forum/index.php" target="_blank">Forum</a>
           <a class="nav-link text-muted dropdown-toggle pr-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Info
           </a>

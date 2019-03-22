@@ -13,6 +13,11 @@
   z-index: 20;
 }
 
+.card-overflow{
+  overflow-x: auto;
+white-space: nowrap;
+}
+
 .btn-gold{
   background-color: gold;
   border-color: gold;

@@ -168,7 +168,7 @@
       echo "  <div class=\"row\">";
       echo "    <div class=\"col-sm-12 mx-auto\">";
       echo "      <div class=\"card shadow-lg my-3\">";
-      echo "        <div class=\"card-body pb-0\">";
+      echo "        <div class=\"card-body card-overflow pb-0\">";
       echo "        <h1 class=\"card-title text-center\">Projects</h1>";
       generateSpecificTable("", "");
       echo "        </div>";
@@ -184,7 +184,7 @@
       echo "<div class='row'>
         <div class='col-sm-12 mx-auto'>
           <div class='card shadow-lg my-3'>
-            <div class='card-body pb-0'>
+            <div class='card-body card-overflow pb-0'>
             <h1 class='card-title text-center'>Statistics</h1>";
             generateTotalTable("","");
             echo "</div>
