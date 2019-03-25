@@ -4,7 +4,7 @@ include "controllers/print_form_controller.php";
 include "controllers/functions.php";
 ?>
 <!DOCTYPE html>
-<html class="bg-secondary">
+<html class="bg-light">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,12 +40,15 @@ include "controllers/functions.php";
                     </select>
                   </div>
 
-
                   <div class="form-group">
                     <label for="amount" id="amountlabel">Amount of plastic (g)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
-                    <small id="amountsmall" class="form-text text-muted ml-1"> (0 if using your own material or reprint)</small>
+                    <small id="amountsmall" class="form-text text-muted ml-1"> (0 if reprint)</small>
                     <small id="printprice" class="form-text text-muted ml-1"></small>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" name="usersfilament" id="usersfilament">
+                      <label class="form-check-label" for="usersfilament">Using my own filament.</label>
+                    </div>
                   </div>
 
                   <div class="form-group">

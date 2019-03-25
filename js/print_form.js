@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    $('#reprintpolicy').hide(400);
+
     $('#plastictype').change(
         function () {
             var current_plastic = JSON.parse($('#plastictype option:selected').val());
@@ -50,6 +53,19 @@ $(document).ready(function(){
                 $('#sectiondivider1').show(400);
             }
         });
+
+    $('#usersfilament').change (
+      function() {
+        console.log('change');
+        if (document.getElementById('usersfilament').checked){
+          $("#printprice").html("<strong>$0.00</strong>");
+        }else{
+          var amount = $('#plasticamount').val();
+          var current_plastic = JSON.parse($('#plastictype option:selected').val());
+          $("#printprice").html("<strong>$" + (current_plastic.price * amount).toFixed(2) + "</strong>");
+        }
+      });
+
     // Since it defaults to a 3D scanner first we trigger a change event so that the form rests in a state that we expect.
     $("#machine").trigger("change");
 

@@ -9,11 +9,11 @@ if(isset($_POST['machine'])){
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     //insert into projects with updated time
-    $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, plasticColor, plasticBrand, printTemp, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, userID, userInitials) 
+    $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, plasticColor, plasticBrand, printTemp, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, userID, userInitials)
     VALUES (:plastic, :amount, :color, :brand, :temp, :payment, :machine, :forClass, :startTime, :eta, NULL, NULL, 0, :ID, :initials);");
     date_default_timezone_set("America/New_York");
     $start = date("Y-m-d H:i:s",time());
-    
+
     if(isset($_POST['hours']) && isset($_POST['minutes']) && $_POST['hours'] != "" && $_POST['minutes'] != ""){
         //perform conversion from hrs,min to all mins
         $hr = $_POST['hours'];
@@ -43,14 +43,14 @@ if(isset($_POST['machine'])){
     // The information regarding plastics is in JSON, so we must decode it.
     $plasticInfo = json_decode($_POST['plastic'],true);
     //We make sure to not charge if they're not using plastic
-    if(isset($_POST['amount']) && $_POST['amount'] != ""){
-        $price = $_POST['amount'] * (float)$plasticInfo['price'];
+    if(isset($_POST['amount']) && $_POST['amount'] != "" && !(isset($_POST['usersfilament']))){
+      $price = $_POST['amount'] * (float)$plasticInfo['price'];
     }else{
         $price = 0;
     }
-    
+
     // Maps all the variables correctly.
-    $paramaterArray = 
+    $paramaterArray =
     [
         'plastic' => $plasticInfo['type'],
         'amount' => $_POST['amount'],
