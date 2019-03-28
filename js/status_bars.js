@@ -272,7 +272,7 @@ function updateStatusBars(machines, projects, users, change) {
                                   // Project wasn't failed but now it is.
                                   if (change[i] != 'failed'){
                                     change[i] = 'failed';
-                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                       $('#' + id + "_percentage").remove();
                                       $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
                                       var b = new ldBar('#'+id + '_percentage',{
@@ -288,12 +288,12 @@ function updateStatusBars(machines, projects, users, change) {
                                   else {
                                     // 1 hours is up
                                     if (current > eta) {
-                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Machine to be freed.</strong></font></p>";
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Machine to be freed.</strong></font></p>";
                                       elem.ldBar.set(100);
                                     }
                                     // 1 hour in progress
                                     else {
-                                        el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Print Failed!</strong></font></p>";
+                                        el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Print Failed!</strong></font></p>";
                                         var totalTime = eta-start;
                                         var timeElapsed = current-start;
                                         var percentage = timeElapsed / totalTime * 100;
@@ -305,7 +305,7 @@ function updateStatusBars(machines, projects, users, change) {
                                 // Machine wasn't in use, but now is
                                 else if (change[i] != 'inuse'){
                                   change[i] = 'inuse';
-                                  el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                  el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                   $('#' + id + "_percentage").remove();
                                   $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
                                   var b = new ldBar('#'+id + '_percentage',{
@@ -322,12 +322,12 @@ function updateStatusBars(machines, projects, users, change) {
                                 else{
                                   // Project is complete
                                   if (current > eta) {
-                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Complete!</strong></font></p>";
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Complete!</strong></font></p>";
                                     elem.ldBar.set(100);
                                   }
                                   // Project in Progress
                                   else {
-                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                       var totalTime = eta-start;
                                       var timeElapsed = current-start;
                                       var percentage = timeElapsed / totalTime * 100;
