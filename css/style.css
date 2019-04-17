@@ -53,6 +53,12 @@ white-space: nowrap;
   width: 100%;
 }
 
+.status-bar-card-height-TV{
+  display:block;
+  height: 240px;
+  width: 100%;
+}
+
 .ldBar.no-label .ldBar-label {
 display: none;
 }
