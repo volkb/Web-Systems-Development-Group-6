@@ -11,7 +11,7 @@
   <div class="bg-secondary pt-3 p-2">
     <?php include_once 'nav_bar.php';?>
   </div>
-  <div class="container pt-5" id="statuses">
+  <div class="container-fluid pt-5" id="statuses">
   </div>
 </body>
 
