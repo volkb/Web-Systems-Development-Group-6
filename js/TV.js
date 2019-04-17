@@ -95,12 +95,12 @@ function createStatusBars() {
                 machine_change[i] = 'ooo';
                 if(i == 0){
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
-                }else if (i % 6 == 0){
+                }else if (i % 8 == 0){
                   $('#temp_row').removeAttr('id');
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col-lg-2 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height-TV card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr class='m-0' /><div class='text-center' id=\"" + id + "\"><p class=' m-0 p-0 text-center'><font size='4'><strong>Temporarily Out of Service.</strong></font></p></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div class='text-center' id=\"" + id + "\"><p class=' m-0 p-0 text-center'><font size='3'><strong>Temporarily Out of Service.</strong></font></p></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#DC3545,#E15361, 0)'
@@ -113,12 +113,12 @@ function createStatusBars() {
                 machine_change[i] = 'failed';
                 if(i == 0){
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
-                }else if (i % 6 == 0){
+                }else if (i % 8 == 0){
                   $('#temp_row').removeAttr('id');
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col-lg-2 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height-TV card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#FFC107,#FFD553, 2)'
@@ -131,12 +131,12 @@ function createStatusBars() {
                 machine_change[i] = 'free';
                 if(i == 0){
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
-                }else if (i % 6 == 0){
+                }else if (i % 8 == 0){
                   $('#temp_row').removeAttr('id');
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col-lg-2 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height-TV card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col status-bar-card-width-TV mx-2 my-2 p-0 '><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#CCCCCC,#D4D4D4, 0)'
@@ -149,12 +149,12 @@ function createStatusBars() {
                 machine_change[i] = 'inuse';
                 if(i == 0){
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
-                }else if (i % 6 == 0){
+                }else if (i % 8 == 0){
                   $('#temp_row').removeAttr('id');
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col-lg-2 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height-TV card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#28A745,#48B461, 2)'
@@ -254,7 +254,7 @@ function updateStatusBars(machines, projects, users, change) {
                                   // Project wasn't failed but now it is.
                                   if (change[i] != 'failed'){
                                     change[i] = 'failed';
-                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                       $('#' + id + "_percentage").remove();
                                       $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
                                       var b = new ldBar('#'+id + '_percentage',{
@@ -270,12 +270,12 @@ function updateStatusBars(machines, projects, users, change) {
                                   else {
                                     // 1 hours is up
                                     if (current > eta) {
-                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Machine to be freed.</strong></font></p>";
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='3'><strong>Machine to be freed.</strong></font></p>";
                                       elem.ldBar.set(100);
                                     }
                                     // 1 hour in progress
                                     else {
-                                        el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Print Failed!</strong></font></p>";
+                                        el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='3'><strong>Print Failed!</strong></font></p>";
                                         var totalTime = eta-start;
                                         var timeElapsed = current-start;
                                         var percentage = timeElapsed / totalTime * 100;
@@ -287,7 +287,7 @@ function updateStatusBars(machines, projects, users, change) {
                                 // Machine wasn't in use, but now is
                                 else if (change[i] != 'inuse'){
                                   change[i] = 'inuse';
-                                  el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                  el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                   $('#' + id + "_percentage").remove();
                                   $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
                                   var b = new ldBar('#'+id + '_percentage',{
@@ -304,12 +304,12 @@ function updateStatusBars(machines, projects, users, change) {
                                 else{
                                   // Project is complete
                                   if (current > eta) {
-                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Complete!</strong></font></p>";
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='3'><strong>Complete!</strong></font></p>";
                                     elem.ldBar.set(100);
                                   }
                                   // Project in Progress
                                   else {
-                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='3'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='3'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='3'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
                                       var totalTime = eta-start;
                                       var timeElapsed = current-start;
                                       var percentage = timeElapsed / totalTime * 100;

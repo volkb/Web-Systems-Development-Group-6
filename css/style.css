@@ -55,8 +55,13 @@ white-space: nowrap;
 
 .status-bar-card-height-TV{
   display:block;
-  height: 240px;
-  width: 100%;
+  height: 210px;
+  width: 210px;
+  max-width: 216px;
+}
+.status-bar-card-width-TV{
+  width: 210px;
+  max-width: 216px;
 }
 
 .ldBar.no-label .ldBar-label {
