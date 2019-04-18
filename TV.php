@@ -8,14 +8,11 @@
 </head>
 
 <body class="bg-secondary">
-  <div class="bg-secondary pt-3 p-2">
-    <?php include_once 'nav_bar.php';?>
-  </div>
-  <div class="container-fluid pt-5" id="statuses">
+  <div class="container-fluid" id="statuses">
   </div>
 </body>
 
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/status_bars.js"></script>
+<script src="js/TV.js"></script>
 <script type="text/javascript" src="js/loading-bar.js"></script>
 </html>
