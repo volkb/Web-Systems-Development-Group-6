@@ -42,10 +42,6 @@ function getPrettyDate(time){
   return ret;
 }
 
-/**
- *
- * @param machineReturn - name of function on what to do with success data
- */
 function fetchMachines(machineReturn){
     return $.ajax({
         method: "POST",
@@ -56,10 +52,6 @@ function fetchMachines(machineReturn){
     });
 };
 
-/**
- *
- * @param projectsReturn - name of function on what to do with success data
- */
 function fetchProjects(projectsReturn){
     return $.ajax({
         method: "POST",
@@ -80,10 +72,6 @@ function fetchUsers(usersReturn){
   });
 };
 
-/**
- * Generates the initial and empty status bars to be
- * populatetd with information later in a loop
- */
 function createStatusBars() {
     fetchMachines(function(machines){
       fetchProjects(function(projects){
@@ -193,13 +181,8 @@ function createStatusBars() {
       });
     });
 }
-/**
- *
- * @param machines - array of machine data stored as a dictionary
- * @param projects - array of projects data stored as a dictionary
- * @modifies #machine_id - with information about the project currently being printed
- *
- */
+
+
 function updateStatusBars(machines, projects, users, change) {
 
     //for every machine
@@ -341,9 +324,7 @@ function updateStatusBars(machines, projects, users, change) {
                 }
             }
         }
-
     }
-
 }
 
 //populate the webpage with information upon load

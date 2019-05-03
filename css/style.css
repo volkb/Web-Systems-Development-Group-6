@@ -64,6 +64,10 @@ white-space: nowrap;
   max-width: 216px;
 }
 
+.bottom-bars-row-height{
+  height: 75px;
+}
+
 .ldBar.no-label .ldBar-label {
 display: none;
 }

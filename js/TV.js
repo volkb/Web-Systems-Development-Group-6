@@ -100,7 +100,7 @@ function createStatusBars() {
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div class='text-center' id=\"" + id + "\"><p class=' m-0 p-0 text-center'><font size='3'><strong>Temporarily Out of Service.</strong></font></p></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col m-2 p-0 status-bar-card-width-TV status-bar-card-width-TV'><div class='card shadow-lg status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative px-1'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div class='text-center' id=\"" + id + "\"><p class=' m-0 py-1 text-center'><font size='3'><strong>Temporarily Out of Service.</strong></font></p></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#DC3545,#E15361, 0)'
@@ -118,7 +118,7 @@ function createStatusBars() {
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col m-2 p-0 status-bar-card-width-TV'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative px-1'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#FFC107,#FFD553, 2)'
@@ -136,7 +136,7 @@ function createStatusBars() {
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col status-bar-card-width-TV mx-2 my-2 p-0 '><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col status-bar-card-width-TV m-2 p-0 '><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative px-1'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#CCCCCC,#D4D4D4, 0)'
@@ -154,7 +154,7 @@ function createStatusBars() {
                   $('#statuses').append("<div class='row' id='temp_row'></div>");
                 }
                 var id = machines[i]['machineName'].replace(/[^a-zA-Z ]/g, "").replace(/^[0-9]+/g, '').replace(/\s/g, '');
-                $('#temp_row').append("<div class='col mx-2 my-2 p-0'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                $('#temp_row').append("<div class='col m-2 p-0 status-bar-card-width-TV'><div class='card shadow-lg  status-bar-card-width-TV'><div class='status-bar-card-height-TV card-body position-relative px-1'><h5 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h5><hr class='m-0' /><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
                 var bar1 = new ldBar('#'+id + '_percentage',{
                   'preset': 'stripe',
                   'fill': 'data:ldbar/res,stripe(#28A745,#48B461, 2)'
