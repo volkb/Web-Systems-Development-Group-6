@@ -15,6 +15,7 @@
               <!-- <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand d-none d-sm-block"/></a> -->
               <nav class="nav nav-masthead justify-content-center roboto m-auto" id="mainNav">
                   <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>
+                  <a class="nav-link text-center m-auto p-1" href="status_bars.php">Status Bars</a>
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
                   <a class="nav-link text-center m-auto p-1" href="forum/index.php" target="_blank">Forum</a>
