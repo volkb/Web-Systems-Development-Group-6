@@ -42,12 +42,7 @@ if(isset($_POST['machine'])){
     }
     // The information regarding plastics is in JSON, so we must decode it.
     $plasticInfo = json_decode($_POST['plastic'],true);
-    //We make sure to not charge if they're not using plastic
-    if(isset($_POST['amount']) && $_POST['amount'] != "" && !(isset($_POST['usersfilament']))){
-      $price = $_POST['amount'] * (float)$plasticInfo['price'];
-    }else{
-        $price = 0;
-    }
+    $price = substr($_POST['cost'],1);
 
     // Maps all the variables correctly.
     $paramaterArray =
