@@ -350,3 +350,7 @@ body {
 .text-large{
   font-size: 1.15em;
 }
+
+.modal-backdrop.in {
+  z-index: auto;
+}

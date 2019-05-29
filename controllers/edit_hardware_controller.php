@@ -20,7 +20,8 @@ if(isset($_POST['name'])) {
   $stmt->execute();
   header("Location: ../myforge.php");
   exit();
-}else{
+}
+else{
   die("ERROR");
 }
 ?>

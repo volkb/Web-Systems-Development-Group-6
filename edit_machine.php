@@ -29,15 +29,18 @@
                     <h1 class="card-title text-center">Machine Lookup</h1>
                     <form id="get_info">
                         <div class="form-group">
-                            <select class="custom-select green-focus-border" name="machine" id="machine" required>
-                                <option disabled selected class="text-secondary">Select A Machine to Edit</option>
-                                <?php generateTotalMachineDropDown()?>
-                            </select>
+                          <select class="custom-select green-focus-border" name="machine" id="machine" required>
+                            <option disabled selected class="text-secondary">Select A Machine to Edit</option>
+                            <?php generateTotalMachineDropDown()?>
+                          </select>
                         </div>
-                        <span class="text-center">
-                            <button class="btn btn-success btn-clock text-uppercase" type="submit" name="Submit">Lookup</button>
-                            <a class="btn  btn-clock text-uppercase float-right text-white" role="button" style="background-color: #6f42c1" id="addMachineBtn">Add a Machine</a>
-                        </span>
+                        <div class="form-group text-center">
+                          <button class="text-center btn btn-success btn-clock text-uppercase" type="submit" name="Submit">Lookup</button>
+                        </div>
+                        <div class="form-group text-center">
+                          <a class="btn btn-sm text-uppercase float-left text-white" role="button" style="background-color: #6f42c1" id="addMachineBtn">Add a Machine</a>
+                          <button id="delete" class="float-right btn btn-sm btn-danger btn-clock text-uppercase" type="button" name="delete" data-toggle="modal" data-target="#deleteModal">Delete a Machine</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -150,16 +153,46 @@
                             <small class="form-text text-muted ml-1"> 0 if no multiple extrustions</small>
                         </div>
 
-                        <div class="form-group text-center">
-                            <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Save</button>
+                        <div class="form-group">
+                            <button class="float-left btn btn-success btn-clock text-uppercase" type="submit" name="submit">Save</button>
                         </div>
+
+
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- /Edit Machine -->
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Machine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="controllers/delete_machine_controller.php" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <select class="custom-select" name="delete_machine" required>
+              <option disabled selected class="text-secondary">Select a Machine to Delete</option>
+              <?php generateTotalMachineDropDown()?>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">DELETE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Delete confirmation modal -->
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/edit_machine.js"></script>

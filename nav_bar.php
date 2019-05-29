@@ -9,7 +9,7 @@
 
         <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
           <a class="nav-link text-muted" href="index.php">Home</a>
-
+          <a class="nav-link text-muted" href="status_bars.php">Status Bars</a>
           <a class="nav-link text-muted" href="gallery.php">Gallery</a>
           <a class="nav-link text-muted" href="news.php">News</a>
           <a class="nav-link text-muted" href="forum/index.php" target="_blank">Forum</a>

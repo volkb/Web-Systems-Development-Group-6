@@ -11,11 +11,11 @@ function formatPlastic($row, $info){
       if($info == 'brand'){
         $ret_str = $row['plasticBrand']; //Makerbot
       }else if($info == 'type'){
-        $ret_str .= $row['plastic']; //Makerbot PLA
+        $ret_str = $row['plastic']; //Makerbot PLA
       }else if ($info == 'color'){
-        $ret_str .= $row['plasticColor']; //Makerbot PLA, Red
+        $ret_str = $row['plasticColor']; //Makerbot PLA, Red
       }else if ($info == 'amount'){
-        $ret_str .= $row['amount']; //Makerbot PLA, Red - 300
+        $ret_str = $row['amount']; //Makerbot PLA, Red - 300
         if($row['machine'] == "Form 1+"){
             $ret_str .= "mL"; //Makerbot PLA, Red - 300mL,
         }else {
