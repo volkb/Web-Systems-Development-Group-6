@@ -8,9 +8,9 @@ $(document).ready(function(){
             var current_plastic = JSON.parse($('#plastictype option:selected').val());
             var plastictype = current_plastic.type;
             if (plastictype == "Resin") {
-                $('#amountlabel').text("Amount of plastic (mL):");
+                $('#amountlabel').text("Amount of plastic (mL)");
             }else{
-                $('#amountlabel').text("Amount of plastic (g):");
+                $('#amountlabel').text("Amount of plastic (g)");
             }
         });
     // If the amount of plastic is outside of the required amount then we must hide the reprint
@@ -57,18 +57,10 @@ $(document).ready(function(){
                 $('#plasticinfo').attr("hidden",true);
                 $('#reprintpolicy').attr("hidden",true);
                 $('#sectiondivider2').attr("hidden",true);
-                $('#initialslabel').attr("hidden",true);
-                $('#initialssmall').attr("hidden",true);
-                $('#initials').attr("hidden",true);
-                $('#sectiondivider1').attr("hidden",true);
             }else{
                 $('#plasticinfo').removeAttr("hidden");
                 $('#reprintpolicy').removeAttr("hidden");
                 $('#sectiondivider2').removeAttr("hidden");
-                $('#initialslabel').removeAttr("hidden");
-                $('#initialssmall').removeAttr("hidden");
-                $('#initials').removeAttr("hidden");
-                $('#sectiondivider1').removeAttr("hidden");
             }
             $('.required').each(function() {
               var hidden = $(this).attr("hidden");
