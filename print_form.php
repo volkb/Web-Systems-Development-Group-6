@@ -47,7 +47,7 @@ include "controllers/functions.php";
                     <small id="printprice" class="form-text text-muted ml-1"></small>
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" name="usersfilament" id="usersfilament">
-                      <label class="form-check-label" for="usersfilament">Using my own filament.</label>
+                      <label class="form-check-label" for="usersfilament">Using my own filament / Approved reprint.</label>
                     </div>
                   </div>
 
