@@ -194,6 +194,18 @@ function generateTotalMachineDropDown(){
     }
 }
 
+function generateNonPlasticMachines(){
+  $conn = dbconnect();
+  $stmt = $conn->prepare('SELECT machineName FROM hardware WHERE usesPlastic=0');
+  $stmt->execute();
+  $machines = $stmt->fetchall();
+  $ret = array();
+  foreach($machines as $machine){
+    array_push($ret,$machine["machineName"]);
+  }
+  return $ret;
+}
+
 function get_client_ip_server() {
     $ipaddress = '';
     if (getenv('HTTP_CLIENT_IP'))
