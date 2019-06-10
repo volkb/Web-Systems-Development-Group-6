@@ -1,16 +1,23 @@
 <script type="text/javascript">
-$(document).ready(function(){
 
-    $('#reprintpolicy').hide(400);
+function getLaserTime(hours,minutes){
+  var hours_cost = hours * 1;
+  var minutes_cost = minutes * .017;
+  var cost = (hours_cost + minutes_cost).toFixed(2);
+  return cost;
+}
+
+$(document).ready(function(){
 
     $('#plastictype').change(
         function () {
             var current_plastic = JSON.parse($('#plastictype option:selected').val());
             var plastictype = current_plastic.type;
+            $('#usersfilament').trigger("change");
             if (plastictype == "Resin") {
-                $('#amountlabel').text("Amount of plastic (mL):");
+                $('#amountlabel').text("Amount of plastic (mL)");
             }else{
-                $('#amountlabel').text("Amount of plastic (g):");
+                $('#amountlabel').text("Amount of plastic (g)");
             }
         });
     // If the amount of plastic is outside of the required amount then we must hide the reprint
@@ -20,7 +27,7 @@ $(document).ready(function(){
             var amount = $('#plasticamount').val();
             var current_plastic = JSON.parse($('#plastictype option:selected').val());
             var plastictype = current_plastic.type;
-            document.getElementById("printprice").innerHTML = "<strong>$" + (current_plastic.price * amount).toFixed(2) + "</strong>";
+            $('#usersfilament').trigger("change");
             if(plastictype == "Resin" && amount < 7){
                 $('#reprintpolicy').show(400);
                 $('#sectiondivider2').show(400);
@@ -35,13 +42,22 @@ $(document).ready(function(){
 
     $('#usersfilament').change (
       function() {
-        console.log('change');
         if (document.getElementById('usersfilament').checked){
-          $("#printprice").html("<strong>$0.00</strong>");
+          $("#cost").val("$0.00");
         }else{
-          var amount = $('#plasticamount').val();
-          var current_plastic = JSON.parse($('#plastictype option:selected').val());
-          $("#printprice").html("<strong>$" + (current_plastic.price * amount).toFixed(2) + "</strong>");
+          var type = $('#machine option:selected').val();
+          var nonPlasticMachines = <?php echo json_encode(generateNonPlasticMachines());?>;
+          if(jQuery.inArray(type,nonPlasticMachines) != -1){
+            if(type=="Laser Cutter"){
+              $("#cost").val("$" + getLaserTime($("#hours").val(),$("#minutes").val()));
+            }else{
+              $("#cost").val("$0.00");
+            }
+          }else{
+            var amount = $('#plasticamount').val();
+            var current_plastic = JSON.parse($('#plastictype option:selected').val());
+            $("#cost").val("$" + (current_plastic.price * amount).toFixed(2));
+          }
         }
       });
 
@@ -49,36 +65,39 @@ $(document).ready(function(){
 
 
     $('#machine').change (
-        function () {
-            var type = $('#machine option:selected').val();
-            var nonPlasticMachines = <?php echo json_encode(generateNonPlasticMachines());?>;
-            // These are machines that don't handle plastic, so plastic info doesn't make sense
-            if(jQuery.inArray(type,nonPlasticMachines) != -1){
-                $('#plasticinfo').attr("hidden",true);
-                $('#reprintpolicy').attr("hidden",true);
-                $('#sectiondivider2').attr("hidden",true);
-                $('#initialslabel').attr("hidden",true);
-                $('#initialssmall').attr("hidden",true);
-                $('#initials').attr("hidden",true);
-                $('#sectiondivider1').attr("hidden",true);
-            }else{
-                $('#plasticinfo').removeAttr("hidden");
-                $('#reprintpolicy').removeAttr("hidden");
-                $('#sectiondivider2').removeAttr("hidden");
-                $('#initialslabel').removeAttr("hidden");
-                $('#initialssmall').removeAttr("hidden");
-                $('#initials').removeAttr("hidden");
-                $('#sectiondivider1').removeAttr("hidden");
+      function () {
+          var type = $('#machine option:selected').val();
+          var nonPlasticMachines = <?php echo json_encode(generateNonPlasticMachines());?>;
+          $('#usersfilament').trigger("change");
+          // These are machines that don't handle plastic, so plastic info doesn't make sense
+          if(jQuery.inArray(type,nonPlasticMachines) != -1){
+              $('#plasticinfo').attr("hidden",true);
+              $('#reprintpolicy').attr("hidden",true);
+              $('#sectiondivider2').attr("hidden",true);
+          }else{
+              $('#plasticinfo').removeAttr("hidden");
+              $('#reprintpolicy').removeAttr("hidden");
+              $('#sectiondivider2').removeAttr("hidden");
+          }
+          $('.required').each(function() {
+            var hidden = $(this).attr("hidden");
+            if ($(this).is(":hidden")){
+              $(this).removeAttr("required");
+            }else {
+              $(this).prop("required", "true");
             }
-            $('.required').each(function() {
-              var hidden = $(this).attr("hidden");
-              if ($(this).is(":hidden")){
-                $(this).removeAttr("required");
-              }else {
-                $(this).prop("required", "true");
-              }
-            });
+          });
         });
-        $("#machine").trigger("change");
+
+      $('#hours').change(function(){
+        $('#usersfilament').trigger("change");
+      });
+      $('#minutes').change(function(){
+        $('#usersfilament').trigger("change");
+      });
+
+      $("#machine").trigger("change");
+      $('#plastictype').trigger("change");
+      $('#plasticamount').trigger("change");
  });
 </script>

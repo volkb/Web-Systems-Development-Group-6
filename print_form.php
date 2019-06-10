@@ -24,74 +24,76 @@ include "controllers/functions.php";
         <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
           <div class="card shadow-lg my-5">
             <div class="card-body">
-              <h1 class="card-title text-center">Print Job Form</h1>
+              <h1 class="card-title text-center">Checkout a Machine</h1>
               <form action="controllers/print_form_controller.php" name ='print_form' method="post">
 
-                <label for="machine" id="machinelabel">Machine Type:</label>
-                <select name="machine" id="machine" required>
-                  <?php generateMachineDropDown(0) ?>
-                </select>
-
-                <div id="plasticinfo">
-                  <div class="form-group">
-                    <label for="plastic" id="plasticlabel">Plastic Type:</label>
-                    <select name="plastic" id="plastictype" class="required">
-                      <?php generatePlasticsDropDown() ?>
+                  <div class="form-group mb-4">
+                    <label for="machine" id="machinelabel">Machine Name</label>
+                    <select class="form-control w-25" name="machine" id="machine" required>
+                      <?php generateMachineDropDown(0) ?>
                     </select>
                   </div>
+                  <hr />
 
-                  <div class="form-group">
-                    <label for="amount" id="amountlabel">Amount of plastic (g)</label>
-                    <input type="text" class="form-control required" id="plasticamount" name="amount"/>
-                    <small id="amountsmall" class="form-text text-muted ml-1"> (0 if reprint)</small>
-                    <small id="printprice" class="form-text text-muted ml-1"></small>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" name="usersfilament" id="usersfilament">
-                      <label class="form-check-label" for="usersfilament">Using my own filament.</label>
+                <div id="plasticinfo">
+                  <div class="form-row">
+                      <div class="col-md-4">
+                        <label for="plastic" id="plasticlabel">Plastic Type</label>
+                        <select class="form-control" name="plastic" id="plastictype" class="required">
+                          <?php generatePlasticsDropDown() ?>
+                        </select>
+                      </div>
+
+                      <div class="col-md-4">
+                        <label for="amount" id="amountlabel">Amount of Plastic (g)</label>
+                        <input type="text" class="form-control required" id="plasticamount" name="amount"/>
+                        <small id="amountsmall" class="form-text text-muted ml-1"> (0 if reprint)</small>
+                        <small id="printprice" class="form-text text-muted ml-1"></small>
+                      </div>
+
+
+                      <div class="col-md-4">
+                        <label for="brand" id="brandlabel">Plastic Brand</label>
+                        <input type="text" class="form-control required" name="brand" id="brand"/>
+                      </div>
+                    </div>
+
+                  <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="temp" id="templabel">Print Temperature</label>
+                        <input type="text" class="form-control required" name="temp" id="temp"/>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="color" id="colorlabel">Color of Plastic</label>
+                      <input type="text" class="form-control required" name="color" id="color"/>
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <label for="brand" id="brandlabel">Plastic Brand</label>
-                    <input type="text" class="form-control required" name="brand" id="brand"/>
+                  <div class="form-check mb-4">
+                    <input type="checkbox" class="form-check-input" name="usersfilament" id="usersfilament">
+                    <label class="form-check-label" for="usersfilament">Using my own filament / Approved reprint.</label>
                   </div>
-
-                  <div class="form-group">
-                    <label for="temp" id="templabel">Print temperature</label>
-                    <input type="text" class="form-control required" name="temp" id="temp"/>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="color" id="colorlabel">Color of Plastic</label>
-                    <input type="text" class="form-control required" name="color" id="color"/>
-                  </div>
-
-
+                  <hr />
                 </div>
 
-                <div class="form-group">
-                    <label for="time">Estimated time to complete</label>
-                    <div style="display: block">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                    <label style="margin-right:10px" for="hours">Hr</label>
-                                    <input style="margin-right:10px" type="number" class="form-control" id="hours" name="hours" min="0" max="72" required/>
-                                    <label style="margin-right:10px" for="minutes">Min</label>
-                                    <input style="margin-right:10px" type="number" class="form-control" id="minutes" name="minutes" min="0" max="4320" required/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <label>Estimated Time to Completion</label>
+                <div class="form-row">
+                  <div class="col-md-6 mb-2">
+                    <input type="number" class="form-control" id="hours" name="hours" min="0" max="240" placeholder="Hours" required  />
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <input type="number" class="form-control" id="minutes" name="minutes" min="0" max="59" placeholder="Minutes" required  />
+                  </div>
                 </div>
 
-                <div class="form-group">
-
+                <div class="form-group mb-4">
                   <input type="checkbox" name="forclass" value="1"/>
                   <label for="forclass">This print is for a class</label>
                 </div>
 
-                <hr id='sectiondivider1'/>
+                <hr />
+
 
 
 
@@ -106,14 +108,19 @@ include "controllers/functions.php";
                     <input type="checkbox" name="reprintpolicy" value="agree" class="required"/>
                     <label for="reprintpolicy"> I agree to the reprint policy.</label>
                   </div>
+                  <hr id='sectiondivider2'/>
                 </div>
 
-                <hr id='sectiondivider2'/>
-
-                <div class="form-group">
-                  <label for="initials" id="initialslabel">Initials</label>
-                  <input type="text" class="form-control required" name="initials" id="initials"/>
-                  <small id="initialssmall" class="form-text text-muted ml-1">By initialing here, you agree to pay the charge shown above.</small>
+                <div class="form-row">
+                  <div class="col-md-8 mb-4">
+                    <label for="initials" >Initials</label>
+                    <input type="text" class="form-control" name="initials"/>
+                    <small id="initialssmall" class="form-text text-muted ml-1">By initialing here, you agree to pay the charge shown.</small>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <label for="cost">Cost</label>
+                    <input id="cost" type="text" class="form-control" name="cost" placeholder="$0.00" readonly />
+                  </div>
                 </div>
 
                 <div class="text-center">
