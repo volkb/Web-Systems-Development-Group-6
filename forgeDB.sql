@@ -21,11 +21,14 @@ CREATE TABLE `projects` (
   PRIMARY KEY (`pid`)
 );
 
+
 CREATE TABLE `hardware` (
-  `inUse` BOOLEAN,
-  `status` BOOLEAN,
-  `machineName` varchar(50) NOT NULL,
-  `usesPlastic` BOOLEAN,
+  `inUse` tinyint(1) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `machineName` varchar(50)  NOT NULL,
+  `usesPlastic` tinyint(1) DEFAULT NULL,
+  `multiple_extrusion` tinyint(1) DEFAULT NULL,
+  `num_extrusions` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`machineName`)
 );
 
@@ -40,6 +43,7 @@ CREATE TABLE `users` (
   `gender` varchar(50),
   `major` varchar(255) NOT NULL,
   `outstandingBalance` float NOT NULL,
+  `verified` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`rin`)
 );
 
@@ -71,25 +75,24 @@ CREATE TABLE `sessions` (
   ALTER TABLE `projects` ADD CONSTRAINT `fk_userID`  FOREIGN KEY (`userID`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   ALTER TABLE `sessions` ADD CONSTRAINT `fk_userID2` FOREIGN KEY (`userID`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   ALTER TABLE `volunteers` ADD CONSTRAINT `fk_userID3` FOREIGN KEY (`rin`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-  
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Laser Cutter",0);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Vinyl Cutter",0);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"3D Scanner",0);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Makerbot Z18",1);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"TAZ 5",1);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"TAZ Mini",1);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Makerbot Mini",1);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Form 1+",1);
-  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Sewing Machine",0);
-  
-  
+
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Laser Cutter",0,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Vinyl Cutter",0,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"3D Scanner",0,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Makerbot Z18",1,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"TAZ 5",1,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"TAZ Mini",1,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Makerbot Mini",1,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Form 1+",1,0,0);
+  INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`,`multiple_extrusion`, `num_extrusions`) VALUES (0,1,"Sewing Machine",0,0,0);
+
+
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (1,"PLA",0.07);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (2,"ABS",0.06);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (3,"Nylon",0.1);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (4,"Flexy",0.09);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (5,"nGen",0.055);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (6,"Resin",0.2);
-  
+
   INSERT INTO `users` (`rcsID`, `rin`, `firstName`, `lastName`, `email`, `password`, `type`, `gender`, `major`, `outstandingBalance`) VALUES
 ('ADMIN', 660000000, 'Super', 'User', 'rpi.forge@gmail.com', '$2y$10$aXRt6c3hqluUmHpULUO6nOvdu0F3N6Q3AzqG0bptSQCRZ9E89dlEy', 'TA', 'male', 'ITWS', 0.0);
-

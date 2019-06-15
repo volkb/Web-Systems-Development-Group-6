@@ -71,7 +71,7 @@
             echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
             //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<div class='col-md-3 py-1 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</button></div>";
+            echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</a></div>";
             echo "</div>
             </div>
           </div>
@@ -84,7 +84,7 @@
             <div class='card-body'>
             <h1 class='card-title text-center'>Admin Panel</h1>";
               echo "<div class='row py-2'>";
-              echo "<div class='col-md-3 py-1 text-center dropdown show'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+              echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Machine Forms</a>";
               echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
               echo "<a class='dropdown-item' href='print_form.php'>Use a Machine</a>";
               echo "<a class='dropdown-item' href='edit_machine.php'>Maintain Machines</a>";
@@ -93,7 +93,7 @@
               echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
               echo "<div class='col-md-3 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
               // Heuristic Report as .xls
-              echo "<div class='col-md-3 py-1 text-center dropdown show'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+              echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
               echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
               echo "<a class='dropdown-item' href='acct_rec_report.php'>Accounts Recievable</a>";
               echo "<a class='dropdown-item' href='usage_report.php'>Usage Report</a>";
@@ -104,7 +104,7 @@
               echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
               echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='edit_user.php'>Edit Account</a></div>";
               //display a pop-up asking for failed machine, then pull user info and get email to send
-              echo "<div class='col-md-4 py-1 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</button></div>";
+              echo "<div class='col-md-4 py-1 text-center'><a role=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='print_failed.php'>Failed Print Email</a></div>";
               echo "</div>
         </div>
       </div>
@@ -117,7 +117,7 @@
             <div class='card-body'>
             <h1 class='card-title text-center'>Super Admin Panel</h1>";
             echo "<div class='row py-2'>";
-            echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Reports</a>";
+            echo "<div class='col-md-3 py-1 text-center dropdown'><a class='btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Machine Forms</a>";
             echo "<div class='dropdown-menu' aira-labelledby='dropdownMenuLink'>";
             echo "<a class='dropdown-item' href='print_form.php'>Use a Machine</a>";
             echo "<a class='dropdown-item' href='edit_machine.php'>Maintain Machines</a>";
@@ -168,7 +168,7 @@
       echo "  <div class=\"row\">";
       echo "    <div class=\"col-sm-12 mx-auto\">";
       echo "      <div class=\"card shadow-lg my-3\">";
-      echo "        <div class=\"card-body pb-0\">";
+      echo "        <div class=\"card-body card-overflow pb-0\">";
       echo "        <h1 class=\"card-title text-center\">Projects</h1>";
       generateSpecificTable("", "");
       echo "        </div>";
@@ -184,7 +184,7 @@
       echo "<div class='row'>
         <div class='col-sm-12 mx-auto'>
           <div class='card shadow-lg my-3'>
-            <div class='card-body pb-0'>
+            <div class='card-body card-overflow pb-0'>
             <h1 class='card-title text-center'>Statistics</h1>";
             generateTotalTable("","");
             echo "</div>

@@ -15,11 +15,19 @@
               <!-- <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand d-none d-sm-block"/></a> -->
               <nav class="nav nav-masthead justify-content-center roboto m-auto" id="mainNav">
                   <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>
-                  <a class="nav-link text-center m-auto p-1" href="equipment.php">Equipment</a>
-                  <a class="nav-link text-center m-auto p-1" href="hours.php">Hours</a>
+                  <a class="nav-link text-center m-auto p-1" href="status_bars.php">Status Bars</a>
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
-                  <a class="nav-link text-center m-auto p-1" href="contact.php">Contact</a>
+                  <a class="nav-link text-center m-auto p-1" href="forum/index.php" target="_blank">Forum</a>
+                  <a class="nav-link text-center m-auto p-1 dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Info
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="hours.php">Hours</a>
+                    <a class="dropdown-item" href="contact.php">Contact</a>
+                    <a class="dropdown-item" href="equipment.php">Equipment</a>
+                  </div>
+
               <?php
               if(isset($_COOKIE['FORGE-SESSION'])){
                   echo "<a class=\"nav-link text-center m-auto p-1\" href=\"myforge.php\">My Forge</a>";
@@ -52,9 +60,7 @@
               </div>
               <div class="row">
                 <div class="text-center container m-auto p-3">
-                    <h2 class="text-warning font-weight-bold" >WeR Gold</h2>
-                    <p class="roboto">Support the Forge at weR Gold!</p>
-                    <a class="btn btn-primary btn-warning" href="https://impact.rpi.edu/project/13495" target="_blank">Donate</a>
+                    <img src="logo/Official Logo No Print.png" width="18%" height="18%"/>
                 </div>
               </div>
           </div>
@@ -86,7 +92,7 @@
             </div>
             <div class="col-sm-9">
               <h3 class="">Find Us Physically</h3>
-              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
+              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. If the sign is flipped to OPEN, come on in.</p>
               <a class="btn btn-primary" href="hours.php">Hours of Operation
                 <br> </a>
             </div>
@@ -131,4 +137,5 @@
     </div>
     <?php include 'footer.php';?>
   </body>
+  <?php include 'scripts.php';?>
 </html>

@@ -20,29 +20,26 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-sm-9 col-md-9 col-lg-9 mx-auto">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card shadow-lg my-5">
                 <div class="card-body">
                     <h1 class="card-title text-center">Send Print Failure Email</h1>
+                    <hr/>
                     <div class="container">
-                        </div>
-                        <form class="form-horizontal" role="form" method="post" action="controllers/email_controller.php">
+                        <form method="post" action="controllers/email_controller.php">
                             <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-5">
-                                    <select class="custom-select" name="machine">
-                                        <option selected disabled>Select The Failed Machine</option>
-                                        <?php generateMachineDropDown(1); ?>
-                                    </select>
-                                </div>
+                              <select class="custom-select" name="machine">
+                                  <option selected disabled>Select The Failed Machine</option>
+                                  <?php generateMachineDropDown(1); ?>
+                              </select>
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-5 col-sm-offset-2">
-                                    <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
-                                </div>
+
+                            <div class="form-group text-center">
+                              <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
                             </div>
 
                         </form>
+                        </div>
 
 
 

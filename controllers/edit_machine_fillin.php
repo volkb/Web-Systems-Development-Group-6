@@ -7,19 +7,20 @@ if(isset($_POST['machine'])){
     $conn = dbConnect();
 
     //retrieving rest of user data
-    $m_name = $_POST['machine'];
+    $name = $_POST['machine'];
     $stmt = $conn->prepare('SELECT * FROM hardware WHERE machineName=:name');
-    $stmt->bindParam(':name',$m_name);
+    $stmt->bindParam(':name',$name);
     $stmt->execute();
-    $user = $stmt->fetch();
-    if(!$user){
+    $machine = $stmt->fetch();
+    if(!$machine){
         echo "Machine doesn't exist";
     }
     else{
-        echo $user['status'].";";
-        echo $user['usesPlastic'].";";
-        echo $user['multiple_extrusion'].";";
-        echo $user['num_extrusions'].";";
+        echo $machine['inUse'].";";
+        echo $machine['status'].";";
+        echo $machine['usesPlastic'].";";
+        echo $machine['multiple_extrusion'].";";
+        echo $machine['num_extrusions'].";";
     }
 }
 else{
