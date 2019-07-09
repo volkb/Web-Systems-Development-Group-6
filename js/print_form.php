@@ -7,6 +7,16 @@ function getLaserTime(hours,minutes){
   return cost;
 }
 
+function checkRequired(){
+  $('.required').each(function() {
+    if ($(this).is(':hidden')){
+      $(this).removeAttr('required');
+    }else {
+      $(this).attr('required', 'required');
+    }
+  });
+}
+
 $(document).ready(function(){
 
     $('#plastictype').change(
@@ -29,15 +39,23 @@ $(document).ready(function(){
             var plastictype = current_plastic.type;
             $('#usersfilament').trigger("change");
             if(plastictype == "Resin" && amount < 7){
+                $('#reprintpolicy').removeAttr("hidden");
                 $('#reprintpolicy').show(400);
+                $('#sectiondivider2').removeAttr("hidden");
                 $('#sectiondivider2').show(400);
             }else if(plastictype != "Resin" && amount < 50){
+                $('#reprintpolicy').removeAttr("hidden");
                 $('#reprintpolicy').show(400);
+                $('#sectiondivider2').removeAttr("hidden");
                 $('#sectiondivider2').show(400);
             }else{
+                console.log('here');
+                $('#reprintpolicy').attr("hidden",true);
                 $('#reprintpolicy').hide(400);
-                $('#sectiondivider2').hide(400);
+                $('#sectiondivider2').attr("hidden",true);
+                $('#sectiondivider2').hide(400)
             }
+            checkRequired();
         });
 
     $('#usersfilament').change (
@@ -71,22 +89,21 @@ $(document).ready(function(){
           $('#usersfilament').trigger("change");
           // These are machines that don't handle plastic, so plastic info doesn't make sense
           if(jQuery.inArray(type,nonPlasticMachines) != -1){
+              $('#plasticinfo').hide(400);
               $('#plasticinfo').attr("hidden",true);
+              $('#reprintpolicy').hide(400);
               $('#reprintpolicy').attr("hidden",true);
+              $('#sectiondivider2').hide(400);
               $('#sectiondivider2').attr("hidden",true);
           }else{
               $('#plasticinfo').removeAttr("hidden");
+              $('#plasticinfo').show(400);
               $('#reprintpolicy').removeAttr("hidden");
+              $('#reprintpolicy').show(400);
               $('#sectiondivider2').removeAttr("hidden");
+              $('#sectiondivider2').show(400);
           }
-          $('.required').each(function() {
-            var hidden = $(this).attr("hidden");
-            if ($(this).is(":hidden")){
-              $(this).removeAttr("required");
-            }else {
-              $(this).prop("required", "true");
-            }
-          });
+          checkRequired();
         });
 
       $('#hours').change(function(){
@@ -99,5 +116,8 @@ $(document).ready(function(){
       $("#machine").trigger("change");
       $('#plastictype').trigger("change");
       $('#plasticamount').trigger("change");
+      $('#reprintpolicy').hide(400);
+      $('#reprintpolicy').attr("hidden",true);
+      checkRequired();
  });
 </script>
