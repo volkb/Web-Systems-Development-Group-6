@@ -9,7 +9,7 @@
 <body class="bg-secondary">
   <div class="bg-secondary pt-3 p-2">
       <?php include 'nav_bar.php';?>
-
+<!--        for update purposes-->
       <div class="container">
           <div class="row">
               <div class="col-md-12">
@@ -65,7 +65,7 @@
                           $name = $_POST['name'];
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
-                          $headers = "From: " . $from;
+                          $headers = "From: " . $name;
                           $right = "Mail successfully sent";
                           $wrong = "There was an error sending your email.  Please try again later";
 
@@ -135,14 +135,11 @@
 
                               <div class="col-md-6 p-4">
                                   <h3 class="">Support Us</h3>
-                                  <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform!  All contributions made to our cause will be matched by an anonymous donor.  Help us reach our current goal of $6120! </p>
+                                  <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform!  All contributions made to our cause will be matched by an anonymous donor.  Help us reach our current goal of $15,000! </p>
 
-                                  <a class="btn btn-primary" href="https://impact.rpi.edu/project/13495">weR Gold
-<!--                                  Social Media Buttons-->
-                                      <a href="https://impact.rpi.edu/project/13495" target="_blank" class="virtual_link">
-
-                                      </a>
+                                  <a class="btn btn-primary" href="https://impact.rpi.edu/project/13495">weR Gold </a>
                                   <div >
+
 <!--                                      border: 2px solid red-->
                                       <img src="weR.jpg" title="weRImage" style="margin-top: 20px; width:100%;" alt="weRImage" />
                                     </div>

@@ -144,19 +144,27 @@ function getUses(){
 function emailMachine($machine){
     //grab the Rin of that Machine
     $conn = dbConnect();
-    $numUses = $conn->prepare("SELECT userID FROM projects WHERE machine = :machine");
+    $stmt = $conn->prepare("SELECT userID FROM projects WHERE machine = :machine");
     $stmt->bindParam(':machine',$machine);
-    $numUses->execute();
-    $rin_ret = $numUses->fetchColumn();
+    $stmt->execute();
+    $rin_ret = $stmt->fetchColumn();
 
     //grab the email from that RIN
     $conn = dbConnect();
-    $numUses = $conn->prepare("SELECT email FROM users WHERE rin = :rin");
+    $stmt = $conn->prepare("SELECT email FROM users WHERE rin = :rin");
     $stmt->bindParam(':rin',$rin_ret);
-    $numUses->execute();
+    $stmt->execute();
     //now we have the email
-    $email_ret = $numUses->fetchColumn();
+    $email_ret = $stmt->fetchColumn();
     return $email_ret;
+}
+
+function setProjectFailed($machine, $eta){
+  $conn = dbConnect();
+  $stmt = $conn->prepare('UPDATE projects SET eta = :eta, timesFailed = 1 WHERE machine = :machine AND endTime IS NULL');
+  $stmt->bindParam(':machine', $machine);
+  $stmt->bindParam(':eta', $eta);
+  $stmt->execute();
 }
 
 function generateMachineDropDown($inUse){
@@ -184,6 +192,18 @@ function generateTotalMachineDropDown(){
         $item .= "</option>";
         echo $item;
     }
+}
+
+function generateNonPlasticMachines(){
+  $conn = dbconnect();
+  $stmt = $conn->prepare('SELECT machineName FROM hardware WHERE usesPlastic=0');
+  $stmt->execute();
+  $machines = $stmt->fetchall();
+  $ret = array();
+  foreach($machines as $machine){
+    array_push($ret,$machine["machineName"]);
+  }
+  return $ret;
 }
 
 function get_client_ip_server() {

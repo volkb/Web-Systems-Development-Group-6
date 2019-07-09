@@ -1,7 +1,47 @@
-/**
- *
- * @param machineReturn - name of function on what to do with success data
- */
+
+function getName(users, rin){
+  var name = "";
+  for (var i =  0; i < users.length; i++){
+    if (users[i]['rin'] == rin){
+      name = users[i]['firstName'] + " " + users[i]['lastName'];
+    }
+    if (name.length > 14){
+      name = users[i]['firstName'] + " " + users[i]['lastName'].substring(0, 1) + ".";
+    }
+  }
+  return name;
+}
+
+function getPrettyDate(time){
+  //Day
+  var day = time.toDateString().substring(0,3);
+
+  //Hours
+  var dd = "am";
+  var hours = time.getHours();
+  if (hours >= 12){
+    hours = hours - 12;
+    dd = "pm";
+  }
+  if (hours == 0){
+    hours = 12;
+  }
+
+  //Minutes
+  var minutes = (time.getMinutes() < 10? '0' : '') + time.getMinutes();
+
+  //AM or PM
+
+
+  //Format return
+  var ret = "";
+  ret += day + " ";
+  ret += hours + ":";
+  ret += minutes + " ";
+  ret += dd;
+  return ret;
+}
+
 function fetchMachines(machineReturn){
     return $.ajax({
         method: "POST",
@@ -12,10 +52,6 @@ function fetchMachines(machineReturn){
     });
 };
 
-/**
- *
- * @param projectsReturn - name of function on what to do with success data
- */
 function fetchProjects(projectsReturn){
     return $.ajax({
         method: "POST",
@@ -24,75 +60,130 @@ function fetchProjects(projectsReturn){
             projectsReturn(JSON.parse(data));
         }
     });
-}
+};
 
-/**
- * Generates the initial and empty status bars to be
- * populatetd with information later in a loop
- */
+function fetchUsers(usersReturn){
+  return $.ajax({
+      method: "POST",
+      url: "controllers/users_controller.php",
+      success: function(data){
+          usersReturn(JSON.parse(data));
+      }
+  });
+};
+
 function createStatusBars() {
-
-   /**
-     * machines[n][0] == inUSe
-     * machines[n][1] == status
-     * machines[n][2] == machineName
-     * machines[n][3] == usePlastics
-     */
     fetchMachines(function(machines){
+      fetchProjects(function(projects){
+        fetchUsers(function(users){
+          var machine_change = [];
+          for(var i=0;i<machines.length;i++){
 
-        /**
-         * pid
-         * plastic
-         * amount
-         * payment
-         * machine -> machineName
-         * forClass
-         * startTime
-         * eta
-         * endTime
-         * success
-         * timesFailed
-         * plasticBrand
-         * userID
-         * userInit
-         */
-        //nested projects
-        fetchProjects(function(projects){
-            for(var i=0;i<machines.length;i++){
+            // Loop through each machine and create a card and initialize their progress bar
+            if(typeof machines[i] !== "undefined"){
 
-                //makes sure not undefined
-                if(typeof machines[i] !== "undefined"){
-
-                    //appending machine name
-                    $('#statuses').append("<p class='m-0 roboto text-large' id=\"" +machines[i]['machineName']+ "\">"  +machines[i]['machineName']+"</p>");
-
-                    //default status bar
-                    $('#statuses').append("<div class=\"progress mb-3\"><div class=\"progress-bar-striped bg-info\" id=\"" + machines[i]['machineName'] + "_percentage\" role=\"progressbar\" style=\"width:100%\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
-
+              // Check if the current print of the machine is failed.
+              var failed_print = false;
+              for (var k = 0; k<projects.length; k++){
+                if (projects[k]['machine'] == machines[i]['machineName'] && projects[k]['timesFailed'] != 0 && projects[k]['endTime'] == null){
+                  failed_print = true;
                 }
-            }
-            //initial call
-            updateStatusBars(machines, projects);
+              }
 
-            //repeating call
-            setInterval(function () {
-                fetchMachines(function (m) {
-                    fetchProjects(function (p) {
-                       updateStatusBars(m, p);
-                    })
+              // If Machine Out Of Order
+              if (machines[i]['status'] == 0){
+                machine_change[i] = 'ooo';
+                if(i == 0){
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }else if (i % 4 == 0){
+                  $('#temp_row').removeAttr('id');
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }
+                var id = machines[i]['machineName'].replace(/[^a-zA-Z0-9]/g, '').replace(/^3+/, '').replace(/\s/g, '');
+                $('#temp_row').append("<div class='col-lg-3 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr/><div class='text-center' id=\"" + id + "\"><p class=' m-0 p-0 text-center'><font size='4'><strong>Temporarily Out of Service.</strong></font></p></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                var bar1 = new ldBar('#'+id + '_percentage',{
+                  'preset': 'stripe',
+                  'fill': 'data:ldbar/res,stripe(#DC3545,#E15361, 0)'
+                });
+                bar1.set(100, false);
+              }
+
+              // If print is failed
+              else if (failed_print){
+                machine_change[i] = 'failed';
+                if(i == 0){
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }else if (i % 4 == 0){
+                  $('#temp_row').removeAttr('id');
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }
+                var id = machines[i]['machineName'].replace(/[^a-zA-Z0-9 ]/g, "").replace(/^3+/, '').replace(/\s/g, '');
+                $('#temp_row').append("<div class='col-lg-3 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr/><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                var bar1 = new ldBar('#'+id + '_percentage',{
+                  'preset': 'stripe',
+                  'fill': 'data:ldbar/res,stripe(#FFC107,#FFD553, 2)'
+                });
+                bar1.set(0);
+              }
+
+              // If Machine Not in Use
+              else if (machines[i]['inUse'] == 0){
+                machine_change[i] = 'free';
+                if(i == 0){
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }else if (i % 4 == 0){
+                  $('#temp_row').removeAttr('id');
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }
+                var id = machines[i]['machineName'].replace(/[^a-zA-Z0-9 ]/g, '').replace(/^3+/, '').replace(/\s/g, '');
+                $('#temp_row').append("<div class='col-lg-3 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr/><div id=\"" + id + "\"></div><div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                var bar1 = new ldBar('#'+id + '_percentage',{
+                  'preset': 'stripe',
+                  'fill': 'data:ldbar/res,stripe(#CCCCCC,#D4D4D4, 0)'
+                });
+                bar1.set(100, false);
+              }
+
+              // If Machine is in use
+              else {
+                machine_change[i] = 'inuse';
+                if(i == 0){
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }else if (i % 4 == 0){
+                  $('#temp_row').removeAttr('id');
+                  $('#statuses').append("<div class='row' id='temp_row'></div>");
+                }
+                var id = machines[i]['machineName'].replace(/[^a-zA-Z0-9 ]/g, '').replace(/^3+/, '').replace(/\s/g, '');
+                $('#temp_row').append("<div class='col-lg-3 my-2'><div class='card shadow-lg m-auto'><div class='status-bar-card-height card-body position-relative'><h3 class='card-title text-center'><strong>" +machines[i]['machineName'] + "</strong></h3><hr/><div id=\"" + id + "\"></div><div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div></div></div></div>");
+                var bar1 = new ldBar('#'+id + '_percentage',{
+                  'preset': 'stripe',
+                  'fill': 'data:ldbar/res,stripe(#28A745,#48B461, 2)'
+                });
+                bar1.set(0);
+              }
+            }
+          }
+
+          //initial call
+          updateStatusBars(machines, projects, users, machine_change);
+
+          //repeating call
+          setInterval(function () {
+            fetchMachines(function (m) {
+              fetchProjects(function (p) {
+                fetchUsers(function (u) {
+                  updateStatusBars(m, p, u, machine_change);
                 })
-            }, 3000) //every 3 seconds
+              })
+            })
+          }, 1500) //every 3 seconds
         });
+      });
     });
 }
-/**
- *
- * @param machines - array of machine data stored as a dictionary
- * @param projects - array of projects data stored as a dictionary
- * @modifies #machine_id - with information about the project currently being printed
- *
- */
-function updateStatusBars(machines, projects) {
+
+
+function updateStatusBars(machines, projects, users, change) {
 
     //for every machine
     for (var i = 0; i < machines.length; i++) {
@@ -100,14 +191,25 @@ function updateStatusBars(machines, projects) {
         if (typeof machines[i] !== "undefined") {
 
             //variable to hold "[machineName]_percentage"
-            var elem = document.getElementById(machines[i]['machineName'] + '_percentage');
+            var id = machines[i]['machineName'].replace(/[^a-zA-Z0-9 ]/g, '').replace(/^3+/, '').replace(/\s/g, '');
+            var elem = document.getElementById(id + '_percentage');
+            var el = document.getElementById(id);
 
 
-            //display "machine out of order" status bar
+            // Machine out of order
             if (machines[i]['status'] == 0) {
-                elem.setAttribute('class', 'progress-bar-striped bg-danger');
-                elem.setAttribute('aria-valuenow', '100');
-                elem.innerHTML="Out of order";
+              // wasn't out of order, but now is
+              if (change[i] != 'ooo'){
+                change[i] = 'ooo';
+                $('#' + id + "_percentage").remove();
+                $('#' + id).after("<div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
+                var b = new ldBar('#'+id + '_percentage',{
+                  'preset': 'stripe',
+                  'fill': 'data:ldbar/res,stripe(#DC3545,#C44D58, 0)'
+                });
+                b.set(100);
+                el.innerHTML="";
+              }
             }
 
             //if machine is able to print
@@ -115,8 +217,18 @@ function updateStatusBars(machines, projects) {
 
                 //currently not in use
                 if (machines[i]['inUse'] == 0) {
-                    elem.setAttribute('class', 'progress-bar-striped bg-info');
-                    elem.innerHTML = "Not performing job";
+                  // wasn't not in use, now isn't
+                  if (change[i] != 'free'){
+                    change[i] = 'free';
+                    $('#' + id + "_percentage").remove();
+                    $('#' + id).after("<div class='ldBar label-center no-label w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
+                    var b = new ldBar('#'+id + '_percentage',{
+                      'preset': 'stripe',
+                      'fill': 'data:ldbar/res,stripe(#CCCCCC,#D4D4D4, 0)'
+                    });
+                    b.set(100);
+                    el.innerHTML="";
+                  }
                 }
 
                 //currently in use, inUse == 1
@@ -131,55 +243,88 @@ function updateStatusBars(machines, projects) {
                         if (!projects[j]['endTime']) {
                             if (projects[j]['machine'] === machines[i]['machineName']) {
                                 matchedProject = projects[j];
-                                var el = document.getElementById(machines[i]['machineName']);
-                                el.innerHTML = machines[i]['machineName'] + " ----- Started: " + projects[j]['startTime'] + " ----- By: " + projects[j]['userID'];
-                                 //time calculation
+                                var name = getName(users, projects[j]['userID']);
                                 var start = new Date(matchedProject['startTime']);
                                 var eta = new Date(matchedProject['eta']);
-
+                                var startDate = getPrettyDate(start);
+                                var endDate = getPrettyDate(eta);
                                 var current = new Date();
 
-                                //if project start time is AFTER current time
-                                if (start > current) {
-                                    elem.setAttribute('class', 'progress-bar-striped bg-warning');
-                                    elem.setAttribute('aria-valuenow', '0');
-                                    elem.innerHTML = "Print not started yet";
+                                // Project is currently failed
+                                if (projects[j]['timesFailed'] != 0){
+                                  // Project wasn't failed but now it is.
+                                  if (change[i] != 'failed'){
+                                    change[i] = 'failed';
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                      $('#' + id + "_percentage").remove();
+                                      $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
+                                      var b = new ldBar('#'+id + '_percentage',{
+                                        'preset': 'stripe',
+                                        'fill': 'data:ldbar/res,stripe(#FFC107,#FFD553, 2)'
+                                      });
+                                      var totalTime = eta-start;
+                                      var timeElapsed = current-start;
+                                      var percentage = timeElapsed / totalTime * 100;
+                                      elem.ldBar.set(percentage);
+                                  }
+                                  // Project remains failed.
+                                  else {
+                                    // 1 hours is up
+                                    if (current > eta) {
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Machine to be freed.</strong></font></p>";
+                                      elem.ldBar.set(100);
+                                    }
+                                    // 1 hour in progress
+                                    else {
+                                        el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Print Failed!</strong></font></p>";
+                                        var totalTime = eta-start;
+                                        var timeElapsed = current-start;
+                                        var percentage = timeElapsed / totalTime * 100;
+                                        elem.ldBar.set(percentage);
+                                    }
+                                  }
                                 }
 
-                                //if current time is AFTER end time
-                                else if (current > eta) {
-                                    elem.setAttribute('class', 'progress-bar-striped progress-bar-animated bg-success');
-                                    elem.innerHTML = "Print still being worked on";
-
+                                // Machine wasn't in use, but now is
+                                else if (change[i] != 'inuse'){
+                                  change[i] = 'inuse';
+                                  el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                  $('#' + id + "_percentage").remove();
+                                  $('#' + id).after("<div class='ldBar label-center w-100 h-25 fixed-bottom position-absolute' id='" + id + "_percentage'></div>");
+                                  var b = new ldBar('#'+id + '_percentage',{
+                                    'preset': 'stripe',
+                                    'fill': 'data:ldbar/res,stripe(#28A745,#48B461, 2)'
+                                  });
+                                  var totalTime = eta-start;
+                                  var timeElapsed = current-start;
+                                  var percentage = timeElapsed / totalTime * 100;
+                                  elem.ldBar.set(percentage);
                                 }
 
-                                //under work currently
-                                else {
-                                    var totalTime = eta-start;
-                                    var timeElapsed = current-start;
-                                    var percentage = timeElapsed / totalTime * 100;
-                                    elem.setAttribute('class', 'progress-bar-striped progress-bar-animated bg-success');
-                                    elem.setAttribute('style', 'width: ' + percentage + '%');
-                                    elem.setAttribute('aria-valuenow', '50')
-                                    elem.innerHTML = percentage.toFixed(2);
+                                // Machine remains in use
+                                else{
+                                  // Project is complete
+                                  if (current > eta) {
+                                    el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p><p class=' m-0 p-0 text-center'><font size='4'><strong>Complete!</strong></font></p>";
+                                    elem.ldBar.set(100);
+                                  }
+                                  // Project in Progress
+                                  else {
+                                      el.innerHTML = "<p class='m-1'>Name: <font size='4'><span class='align-right float-right'><strong>" + name + "</strong></span></font><br/>Started: <font size='4'><span class='align-right float-right'><strong>" +  startDate + "</strong></span></font><br/>End: <font size='4'><span class='align-right float-right'><strong>"+ endDate +"</strong></span></font></p>";
+                                      var totalTime = eta-start;
+                                      var timeElapsed = current-start;
+                                      var percentage = timeElapsed / totalTime * 100;
+                                      elem.ldBar.set(percentage);
+                                  }
                                 }
                                 break;
-                            }
-                        }
-                        else {
-                            if (projects[j]['machine'] === machines[i]['machineName']) {
-                                matchedProject = projects[j];
-                                elem.setAttribute('class', 'progress-bar-striped bg-warning');
-                                elem.innerHTML="DONE, PLEASE COME IN";
                             }
                         }
                     }
                 }
             }
         }
-
     }
-
 }
 
 //populate the webpage with information upon load

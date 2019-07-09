@@ -13,6 +13,11 @@
   z-index: 20;
 }
 
+.card-overflow{
+  overflow-x: auto;
+white-space: nowrap;
+}
+
 .btn-gold{
   background-color: gold;
   border-color: gold;
@@ -42,6 +47,36 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.24);
 }
 
+.status-bar-card-height{
+  display:block;
+  height: 275px;
+  width: 100%;
+}
+
+.status-bar-card-height-TV{
+  display:block;
+  height: 210px;
+  width: 210px;
+  max-width: 216px;
+}
+.status-bar-card-width-TV{
+  width: 210px;
+  max-width: 216px;
+}
+
+.bottom-bars-row-height{
+  height: 75px;
+}
+
+.ldBar.no-label .ldBar-label {
+display: none;
+}
+
+.transparent-menu {
+  background: transparent;
+  border: none;
+}
+
 /* Removes up and down arrows on 'number' form input fields */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -51,6 +86,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 input[type=number] {
     -moz-appearance:textfield;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
 
 
 /*
@@ -192,7 +235,6 @@ body {
 }
 
 
-
 #mainNav {
   background-color: none;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -289,10 +331,26 @@ body {
 
 }
 
+.green-focus-border:focus {
+  border-color: green;
+  outline: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(0,128,0,0.5);
+}
+
+.purple-focus-border:focus {
+  border-color: rgb(75,0,130);
+  outline: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(75,0,130,0.5);
+}
+
 .text-large{
   font-size: 1.15em;
 }
 
 .text-large{
   font-size: 1.15em;
+}
+
+.modal-backdrop.in {
+  z-index: auto;
 }
