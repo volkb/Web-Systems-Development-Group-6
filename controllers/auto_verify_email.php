@@ -21,9 +21,14 @@ $mail->Subject  = 'Welcome to The Forge!';
 $mail->isHTML(true);
 $mail->Body     = $page;
 if(!$mail->send()) {
-    echo 'Message was not sent.';
-    echo 'Mailer error: ' . $mail->ErrorInfo;
+    echo "<script type= 'text/javascript'>
+        alert('Message could not be sent.  Please try again later\\nMailer error: $mail->ErrorInfo');
+        window.location.replace(\" ../verify_email.html \");
+        </script>";
 } else {
-    echo 'Message has been sent.';
+    echo "<script type= 'text/javascript'>
+        alert('Message sent!');
+        window.location.replace(\" ../index.php\");
+        </script>";
 }
 ?>
