@@ -1,6 +1,7 @@
 # The Forge Website
 
 [![GitHub license](https://img.shields.io/github/license/volkb/Web-Systems-Development-Group-6.svg)](https://github.com/volkb/Web-Systems-Development-Group-6/blob/master/LICENSE.txt)
+[![GitHub contributors](https://img.shields.io/github/contributors/volkb/Web-Systems-Development-Group-6.svg)](https://github.com/volkb/Web-Systems-Development-Group-6/graphs/contributors)
 [![GitHub last commit](https://img.shields.io/github/last-commit/volkb/Web-Systems-Development-Group-6.svg)](https://github.com/volkb/Web-Systems-Development-Group-6/commits/master)
 
 #### Modern Redesign
