@@ -6,5 +6,9 @@
 #### Modern Redesign
 [The Forge Website](https://theforge.rpi.edu/)
 
+#### Contact Us
+
+Join our [Slack](https://rpiforge.slack.com/) channel!
+
 #### License
 The Forge Website uses the [BSD-3 license](https://opensource.org/licenses/BSD-3-Clause)
