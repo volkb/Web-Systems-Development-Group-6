@@ -74,7 +74,8 @@
               </div>
               <div class="row">
                   <div class="col-sm-12">
-                      <p class="roboto cover-description p-auto">We are Rensselaer Polytechnic Institutes only interdisciplinary makerspace, and are 100% student run!</p>
+<!--                    <p class="roboto cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>-->
+                    <p class="roboto cover-description p-auto">We are Rensselaer Polytechnic Institutes only interdisciplinary makerspace, and are 100% student run!</p>
                   </div>
               </div>
           </div>
@@ -121,17 +122,18 @@
           </div>
         </div>
       </div>
-      <div class="row w-75 m-auto pt-2 pb-4 d-block d-sm-none">
-        <hr />
-          <div class="col-md-5 align-self-center p-2">
-            <img class="card-img" src="weR.jpg">
-          </div>
-          <div class="col-md-7 p-2">
-            <h3>Support Us</h3>
-            <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform! All contributions made to our cause will be matched by an anonymous donor. Help us reach our current goal of $6120! </p>
-            <a class="btn btn-gold align-middle gold text-dark" href="https://impact.rpi.edu/project/13495" target="_blank">Donate</a>
-          </div>
-      </div>
+      <!--        weRGold-->
+<!--      <div class="row w-75 m-auto pt-2 pb-4 d-block d-sm-none">-->
+<!--        <hr />-->
+<!--          <div class="col-md-5 align-self-center p-2">-->
+<!--            <img class="card-img" src="weR.jpg">-->
+<!--          </div>-->
+<!--          <div class="col-md-7 p-2">-->
+<!--            <h3>Support Us</h3>-->
+<!--            <p class="">Contribute to our cause through the RPI weR Gold crowdfunding platform! All contributions made to our cause will be matched by an anonymous donor. Help us reach our current goal of $6120! </p>-->
+<!--            <a class="btn btn-gold align-middle gold text-dark" href="https://impact.rpi.edu/project/13495" target="_blank">Donate</a>-->
+<!--          </div>-->
+<!--      </div>-->
       </div>
     </div>
     </div>
