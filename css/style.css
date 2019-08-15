@@ -210,10 +210,10 @@ body {
 }
 
 .mobile-cover-description{
-  width: 100%;
-  font-size: 1.2em;
-  border: 2px solid red;
-  border-radius: 5px;
+  /*width: 100%;*/
+  font-size: 1.0em;
+  /*border: 2px solid red;*/
+  /*border-radius: 5px;*/
 }
 
 .archivo {

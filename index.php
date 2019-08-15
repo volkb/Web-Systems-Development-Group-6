@@ -42,6 +42,7 @@
           </div>
         </header>
           <!-- Displays on large screens -->
+
           <div class="container overflow-hidden m-auto d-none d-sm-block">
               <div class="row">
                   <div class="col-sm-12">
@@ -58,28 +59,31 @@
                       <p class="roboto text-justify cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
                   </div>
               </div>
-              <div class="row">
-                <div class="text-center container m-auto p-3">
-                    <img src="logo/Official Logo No Print.png" width="18%" height="18%"/>
-                </div>
+            <div class="row">
+              <div class="text-center container m-auto p-3">
+                <img src="logo/Official Logo No Print.png" width="18%" height="18%"/>
               </div>
+            </div>
           </div>
-          <!-- Displayes on large screens -->
+          <!-- Displays on large screens -->
           <!-- Displays on mobile screens -->
           <div class="container m-auto d-block d-sm-none">
               <div class="row">
                   <div class="col-sm-12">
-                      <h1 class="mobile-cover-heading p-auto m-auto">THE FORGE</h1>
+                      <h1 class="mobile-cover-heading">THE FORGE</h1>
+<!--                    <h1 class="mobile-cover-heading p-auto m-auto">THE FORGE</h1>-->
                   </div>
               </div>
               <div class="row">
                   <div class="col-sm-12">
-<!--                    <p class="roboto cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>-->
-                    <p class="roboto cover-description p-auto">We are Rensselaer Polytechnic Institutes only interdisciplinary makerspace, and are 100% student run!</p>
+                    <p class="roboto mobile-cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
+<!--                    <p class="roboto cover-description p-auto">We are Rensselaer Polytechnic Institutes only interdisciplinary makerspace, and are 100% student run!</p>-->
                   </div>
               </div>
           </div>
-          <!-- Displayes on mobile screens -->
+
+          <!-- Displays on mobile screens -->
+
       </div>
     </div>
 
