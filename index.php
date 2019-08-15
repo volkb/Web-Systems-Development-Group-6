@@ -56,7 +56,7 @@
               </div>
               <div class="row">
                   <div class="col-sm-12">
-                      <p class="roboto text-justify cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
+                      <p class="roboto cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
                   </div>
               </div>
             <div class="row">
@@ -70,10 +70,16 @@
           <div class="container m-auto d-block d-sm-none">
               <div class="row">
                   <div class="col-sm-12">
-                      <h1 class="mobile-cover-heading">THE FORGE</h1>
+                      <h1 class="mobile-cover-heading p-0 m-0">THE FORGE</h1>
 <!--                    <h1 class="mobile-cover-heading p-auto m-auto">THE FORGE</h1>-->
                   </div>
               </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <hr class="cover-hr p-0 mx-auto mb-3" />
+              </div>
+            </div>
               <div class="row">
                   <div class="col-sm-12">
                     <p class="roboto mobile-cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
