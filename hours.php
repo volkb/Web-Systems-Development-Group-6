@@ -9,7 +9,7 @@
   </head>
 
   <body class="text-center">
-  <div class="text-center bg-transparent" style="background-image: url('homePagePhotos/CII2037.jpg');background-size:cover;background-position:center center;">
+  <div class="text-center bg-primary" style="background-image: url('homePagePhotos/CII2037.jpg');background-size:cover;background-position:center center;">
     <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
       <header class="masthead">

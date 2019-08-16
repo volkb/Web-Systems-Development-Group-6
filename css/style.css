@@ -1,5 +1,5 @@
 .virtual_list_item:hover{
-  background-color: #f71118;
+  background-color: #af0909;
   color: white;
   text-decoration: none !important;
 }
@@ -232,7 +232,7 @@ body {
 }
 
 .cover-hr{
-  border: 2px solid red;
+  border: 2px solid #af0909;
   border-radius: 5px;
   width: 100px;
 }
