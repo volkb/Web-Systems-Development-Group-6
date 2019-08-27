@@ -15,7 +15,7 @@
 
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-    <title>The Forge @ RPI</title>
+    <title>My Forge</title>
 </head>
 
 <body class="bg-light">

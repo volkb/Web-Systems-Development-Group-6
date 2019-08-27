@@ -5,6 +5,8 @@
   <?php include 'style.php';?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forge News</title>
+
 <body class="bg-light">
   <div class="bg-light pt-3 p-2">
       <?php include 'nav_bar.php';?>
