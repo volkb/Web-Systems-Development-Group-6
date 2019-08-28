@@ -18,7 +18,12 @@ $target->execute();
 
 //drop all users except TA's
 $conn = dbConnect();
-$target = $conn->prepare("DELETE FROM `users` WHERE `type` != \"TA\"");
+$target = $conn->prepare("DELETE FROM `users` WHERE `type` != \"TA\" AND `type` != \"lab\"");
+$target->execute();
+
+//set any remaining values to 0
+$conn = dbConnect();
+$target = $conn->prepare("UPDATE `users` SET `outstandingbalance` = 0 WHERE 1;");
 $target->execute();
 
 ?>

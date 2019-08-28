@@ -58,7 +58,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1">
-                      I agree to pay the $10 membership Fee
+                      I agree to pay the $15 membership Fee
                     </label>
                   </div>
 
