@@ -2,6 +2,7 @@
 include_once "db_connector.php";
 include_once 'email_functions.php';
 
+//grab variables from the post, write them to locals
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
     if ($_POST['password'] != $_POST['password2']){
       echo "<script type='text/javascript'>alert('Passwords do not match!');</script>";
@@ -20,7 +21,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $major = $_POST['major'];
     $major_clean = strtolower($major);
 
-
+//create db connection
     $conn = dbConnect();
     //Checks to see if there are users in the database with the same rcsID
     $stmt = $conn->prepare('SELECT * FROM users WHERE rcsID = :rcsID');
@@ -35,8 +36,14 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
             </script>";
       exit();
     }
+//pull intended member fee from database
+    $stmt = $conn->prepare('SELECT * FROM platform_config WHERE value = "member_fee" LIMIT 1');
+    $stmt->execute();
+    $fee = $stmt->fetch();
+
+//if user does not exist, insert them into the database
     $stmt = $conn->prepare('INSERT INTO users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance,verified)
-    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10,0)');
+    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,:fee,0)');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
@@ -45,6 +52,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $stmt->bindParam(':Password',$pass);
     $stmt->bindParam(':gender',$gender_clean);
     $stmt->bindParam(':major',$major_clean);
+    $stmt->bindParam(':fee',$fee['metric']);
     $stmt->execute();
     sendConfirmation();
     header("Location: ../myforge.php");
