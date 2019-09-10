@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center pt-3 display-4 text-primary">Our Equipment</h1>
-        <p class="text-center">All of our equipment is free for all members and membership is available for all RPI students. Take a look at what we have to offer.</p>
+        <p class="text-center">Our equipment is available for all members of Rensselaer; check out what we have and stop by The Forge for more information!</p>
       </div>
     </div>
   </div>
@@ -29,11 +29,15 @@
         <h2 class="text-primary">3D Printers</h2>
         <p>We offer a variety of 3D printing options. Each with their own pros and cons. &nbsp;PLA, ABS, SLA, and even flexible filament.</p>
       </div>
+
+<!--      TODO: z18 and formlabs need landscape photos-->
+
       <div class="container col-md-9">
         <div class="align-self-center mx-1">
           <div class="row">
             <div class="col-md-4 p-0">
               <div class="card">
+<!--                <img class="card-img" src="images/Z18A.JPG" alt="Card image" />-->
                 <img class="card-img" src="homePagePhotos/z18.jpg" alt="Card image" />
                 <div class="card-img-overlay d-flex justify-content-center align-items-center">
                   <h2 class="text-secondary">Makerbot Z18</h2>
@@ -68,7 +72,8 @@
             </div>
             <div class="col-md-4 p-0">
               <div class="card">
-                <img class="card-img" src="homePagePhotos/formlabs.jpg" alt="Card image">
+<!--                <img class="card-img" src="images/Z18A.JPG" alt="Card image" />-->
+                <img class="card-img" src="homePagePhotos/formlabs.jpg" alt="Card image" />
                 <div class="card-img-overlay d-flex justify-content-center align-items-center">
                   <h2 class="text-secondary">Formlabs</h2>
                 </div>
@@ -76,7 +81,7 @@
             </div>
             <div class="col-md-4 p-0">
               <div class="card">
-                <img class="card-img" src="homePagePhotos/mini.jpg" alt="Card image">
+                <img class="card-img" src="images/mini.JPG" alt="Card image">
                 <div class="card-img-overlay d-flex justify-content-center align-items-center">
                   <h2 class="text-secondary">Makerbot Mini</h2>
                 </div>
@@ -123,9 +128,9 @@
           <p class="">Our newly added machines include an Expert Pro Vinyl Cutter and a Brother Sewing and Embroidery Machine</p>
         </div>
         <div class="col-md-4 align-self-center p-0">
-          <img class="card-img" src="homePagePhotos/vinylCutter.jpg"> </div>
+          <img class="card-img" src="images/vinyl.JPG"> </div>
         <div class="col-md-4 align-self-center p-0">
-          <img class="card-img" src="homePagePhotos/embroideryMachine.jpg"> </div>
+          <img class="card-img" src="images/sewing.JPG"> </div>
       </div>
     </div>
   </div>
