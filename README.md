@@ -12,4 +12,4 @@
 Join our [Slack](https://rpiforge.slack.com/) channel!
 
 ### License
-The Forge Website is under the [BSD-3 license](https://opensource.org/licenses/BSD-3-Clause)
+The Forge Website is licensed under the [BSD-3 license](https://opensource.org/licenses/BSD-3-Clause)
