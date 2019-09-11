@@ -18,6 +18,11 @@
       <?php include 'nav_bar.php';?>
   </div>
 
+<!--  TODO:
+        EWS pic
+        update other pics
+        rotate images
+ -->
 
   <div class="py-2 bg-light">
   <div class="container">
