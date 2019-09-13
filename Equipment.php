@@ -129,7 +129,6 @@
                 </div>
               </div>
             </div>
-
           </div>
 
           <div class="row">
@@ -204,9 +203,9 @@
             <p class="">We have two 3D scanners here in The Forge, both are capable of scanning small objects with high detail!</p>
             <p class=""> Need to do some basic soldering, use an oscilloscope? The Forge keeps a basic Electronics Work-Station to help you! If your project requires more than this we recommend visiting the Embedded Hardware Club!</p>
           </div>
-          <div class="col-md-4 align-self-center p-0">
+          <div class="card col-md-4 align-self-center p-0">
             <img class="card-img" src="images/3DScanner.jpg"> </div>
-          <div class="col-md-4 align-self-center p-0">
+          <div class="card col-md-4 align-self-center p-0">
             <img class="card-img" src="images/ews.JPG"> </div>
         </div>
       </div>
@@ -221,9 +220,9 @@
           <p class="">Looking to design a new shirt logo? Or creating vinyl decals for your laptop? You can do it all here! If you come to The Forge and look around, most of our decals were made on our vinyl cutter!</p>
           <p class="">Need to do some sewing? Or stitch your favorite logo onto a patch of fabric? We keep a small sewing station equipped with various colors of thread!</p>
         </div>
-        <div class="col-md-4 align-self-center p-0">
+        <div class="card col-md-4 align-self-center p-0">
           <img class="card-img" src="images/vinyl.JPG"> </div>
-        <div class="col-md-4 align-self-center p-0">
+        <div class="card col-md-4 align-self-center p-0">
           <img class="card-img" src="images/sewing.JPG"> </div>
       </div>
     </div>
