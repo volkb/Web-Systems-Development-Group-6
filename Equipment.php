@@ -6,14 +6,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--  <link rel="stylesheet" href="css/mdb.lite.min.css">-->
   <title>Equipment</title>
 </head>
 <body class="bg-light">
-<!--  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/popper.min.js"></script>
   <div class="bg-light pt-3 p-2">
       <?php include 'nav_bar.php';?>
   </div>
@@ -190,7 +185,7 @@
           <p class="">One of the most capable machines on campus! This machine can cut any non-metal material, and can engrave anodized metals! With a 2'x3' bed, you can fit most raw materials in as well!</p>
         </div>
         <div class="col-md-5 align-self-center p-0">
-          <img class="card-img" src="homePagePhotos/laserCutter.jpg"> </div>
+          <img class="card-img" src="images/laserCutter.jpg"> </div>
       </div>
     </div>
 
