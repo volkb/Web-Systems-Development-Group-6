@@ -11,6 +11,14 @@
 <body class="bg-light">
   <div class="bg-light pt-3 p-2">
       <?php include 'nav_bar.php';?>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center pt-3 display-4 text-primary">Our Equipment</h1>
+          <p class="text-center">Our equipment is available for all members of Rensselaer; check out what we have and stop by The Forge for more information!</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 <!--  TODO:
@@ -20,14 +28,6 @@
  -->
 
   <div class="py-2 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center pt-3 display-4 text-primary">Our Equipment</h1>
-        <p class="text-center">Our equipment is available for all members of Rensselaer; check out what we have and stop by The Forge for more information!</p>
-      </div>
-    </div>
-  </div>
   <div class="container card bg-secondary mb-3 py-2 shadow-lg">
     <div class="row">
       <div class="col-md-3">
