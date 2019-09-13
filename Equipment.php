@@ -65,7 +65,7 @@
                   <div class="card-img-overlay d-flex justify-content-center align-items-center">
                     <h2 class="text-secondary card-text">gCreate 1.5XT+</h2>
                     <div class="card-img-overlay mask flex-center rgba-red-strong">
-                      <p class="text-secondary"> The gCreate is the last word in size here in The Forge, if your model is truly massive, or you want it in a material other than PLA, this is the machine for you</p>
+                      <p class="text-secondary"> The gCreate 1.5XT+ is the last word in size here in The Forge, if your model is truly massive, or you want it in a material other than PLA, this is the machine for you</p>
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h2 class="text-secondary text-center card-text">Lulzbot MOAR-Struder</h2>
                       <div class="card-img-overlay mask flex-center rgba-red-strong">
-                        <p class="text-secondary">This machine utilizes an enlarged nozzle and all metal hotend to lay down as much plastic as fast as possible! as a result, prints off of this machine are slightly less detailed, but print in 1/4 the time!</p>
+                        <p class="text-secondary">The Lulzbot MOAR-Struder utilizes an enlarged nozzle and all metal hotend to lay down as much plastic as fast as possible! as a result, prints off of this machine are slightly less detailed, but print in 1/4 the time!</p>
                       </div>
                     </div>
                   </div>
@@ -136,7 +136,7 @@
             <div class="col-md-4 p-0">
               <div class="card">
                 <div class="view overlay">
-                  <img class="card-img-top" src="images/Z18A.JPG" alt="Card image cap">
+                  <img class="card-img-top" src="images/makerbot.jpg" alt="Card image cap">
                   <div class="card-img-overlay d-flex justify-content-center align-items-center">
                     <h2 class="text-secondary text-center card-text">Makerbot Z18</h2>
                     <div class="card-img-overlay mask flex-center rgba-red-strong">
@@ -205,9 +205,9 @@
             <p class=""> Need to do some basic soldering, use an oscilloscope? The Forge keeps a basic Electronics Work-Station to help you! If your project requires more than this we recommend visiting the Embedded Hardware Club!</p>
           </div>
           <div class="col-md-4 align-self-center p-0">
-            <img class="card-img" src="homePagePhotos/3dScanner.jpg"> </div>
+            <img class="card-img" src="images/3DScanner.jpg"> </div>
           <div class="col-md-4 align-self-center p-0">
-            <img class="card-img" src="images/sewing.JPG"> </div>
+            <img class="card-img" src="images/ews.JPG"> </div>
         </div>
       </div>
     </div>
