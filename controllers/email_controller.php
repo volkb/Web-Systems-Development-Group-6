@@ -29,7 +29,7 @@ if(isset($_POST['machine'])) {
     $emailaddr = $email->fetchColumn();
 
     $mail = new PHPMailer;
-    $mail->setFrom('NO_REPLY@TheForge.rpi.edu', 'Mailer');
+    $mail->setFrom('NO_REPLY@TheForge.rpi.edu', 'The Forge');
     $mail->addAddress($emailaddr,"Forge User");
     $mail->Subject  = 'Failed Print Notice';
     $mail->isHTML(true);
