@@ -9,7 +9,7 @@
   </head>
 
   <body class="text-center">
-  <div class="text-center bg-primary w-100 h-100" style="background-image: url('homePagePhotos/CII2037Blurred.jpg');background-size:cover;background-position:center center;">
+  <div class="text-center bg-primary w-100 h-100" style="background-image: url('images/CII2037Blurred.jpg');background-size:cover;background-position:center center;">
     <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
       <header class="masthead">
