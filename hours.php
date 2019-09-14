@@ -43,9 +43,9 @@
       </header>
 
       <div class="row">
-<!--      Calender-->
-      <div class="container">
-        <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center pt-3 display-4 text-secondary">Hours of Operations</h1>
+          <!--      Calender-->
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-12 p-0 h-100 w-100">
@@ -57,7 +57,6 @@
         </div>
       </div>
 
-      </div>
     </div>
   </div>
   </div>
