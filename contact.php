@@ -6,16 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="bg-secondary">
-  <div class="bg-secondary pt-3 p-2">
+<body class="bg-light">
+  <div class="bg-light pt-3 p-2">
       <?php include 'nav_bar.php';?>
-<!--        for update purposes-->
       <div class="container">
           <div class="row">
               <div class="col-md-12">
                   <h1 class="text-center pt-3 display-4 text-primary">Contact Us</h1>
                   <p class="text-center">Looking to get in touch?</p>
-
                   <!--manual adjustment to center the container-->
                   <div id = "container">
                       <div class="row">
@@ -26,32 +24,37 @@
 <!--                                  </div>-->
                                   <div class="col-sm-9">
                                       <h3 class="">Find us Physically</h3>
-                                      <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;</p>
+                                      <p class="">We are located in the CII 2037A. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;</p>
                                       <a class="btn btn-primary" href="hours.php">Hours of Operation
                                           <br> </a>
                                   </div>
                               </div>
                           </div>
+
+<!--                        TODO:
+                              Change "virtual" buttons to white so they stand out
+-->
+
                           <div class="col-md-6 p-4">
                               <div class="row">
-<!--                                  <div class="col-sm-3 text-center">-->
-<!--                                      <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
-<!--                                  </div>-->
-                                  <div class="col-sm-12">
-                                      <h3 class="">Find us Virtually</h3>
-                                      <ul class="list-group">
-                                          <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
-                                              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
-                                                  <i class="fa fa-fw fa-facebook"></i>
-                                              </li>
-                                          </a>
-                                          <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
-                                              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
-                                                  <i class="fa fa-fw fa-instagram"></i>
-                                              </li>
-                                          </a>
-                                      </ul>
-                                  </div>
+<!--                             <div class="col-sm-3 text-center">-->
+<!--                                 <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
+<!--                             </div>-->
+                                <div class="col-sm-12">
+                                    <h3 class="">Find us Virtually</h3>
+                                        <ul class="list-group bg-light">
+                                            <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
+                                                    <i class="fa fa-fw fa-facebook color"></i>
+                                                </li>
+                                            </a>
+                                            <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
+                                                    <i class="fa fa-fw fa-instagram"></i>
+                                                </li>
+                                            </a>
+                                        </ul>
+                                </div>
                               </div>
                           </div>
                       </div>

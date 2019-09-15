@@ -7,14 +7,14 @@
     <title>Welcome to the Forge</title>
   </head>
   <body class="text-center">
-    <div class="text-center bg-primary w-100 h-100" style="background-image: url('homePagePhotos/cover.jpg');background-size:cover;background-position:center center;">
+    <div class="text-center bg-primary w-100 h-100" style="background-image: url('images/cover.jpg');background-size:cover;background-position:center center;">
       <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
         <header class="masthead">
           <div class="inner">
               <!-- <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand d-none d-sm-block"/></a> -->
               <nav class="nav nav-masthead justify-content-center roboto m-auto" id="mainNav">
-                  <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>
+<!--                  <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>-->
                   <a class="nav-link text-center m-auto p-1" href="status_bars.php">Status Bars</a>
                   <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
                   <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
@@ -103,7 +103,7 @@
             </div>
             <div class="col-sm-9">
               <h3 class="">Find Us Physically</h3>
-              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. If the sign is flipped to OPEN, come on in.</p>
+              <p class="">We are located in the CII 2037A. &nbsp;Take the elevators down in the Low building to the second floor. If the sign is flipped to OPEN, come on in.</p>
               <a class="btn btn-primary" href="hours.php">Hours of Operation
                 <br> </a>
             </div>
