@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js bg-secondary" lang="">
+<html class="no-js bg-light" lang="">
 <head>
   <?php include 'style.php';?>
   <meta charset="utf-8">
