@@ -42,7 +42,8 @@
 <!--                             </div>-->
                                 <div class="col-sm-12">
                                     <h3 class="">Find us Virtually</h3>
-                                        <ul class="list-group bg-light">
+                                        <ul class="list-group">
+
                                             <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
                                                 <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
                                                     <i class="fa fa-fw fa-facebook color"></i>
