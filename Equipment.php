@@ -42,7 +42,7 @@
 
               <div class="card">
                 <div class="view overlay">
-                  <img class="card-img-top" src="images/formlabs.jpg" alt="Card image cap">
+                  <img class="card-img-top" src="images/formlabs.JPG" alt="Card image cap">
                   <div class="card-img-overlay d-flex justify-content-center align-items-center">
                     <h2 class="text-secondary card-text">Formlabs 1+</h2>
                     <div class="card-img-overlay mask flex-center rgba-red-strong">
