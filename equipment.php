@@ -21,12 +21,6 @@
     </div>
   </div>
 
-<!--  TODO:
-        EWS pic
-        update other pics
-        rotate images
- -->
-
   <div class="py-2 bg-light">
   <div class="container card bg-secondary mb-3 py-2 shadow-lg">
     <div class="row">
