@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js bg-secondary" lang="">
+<html class="no-js bg-light" lang="">
 <head>
   <?php include 'style.php';?>
   <meta charset="utf-8">
@@ -21,12 +21,6 @@
     </div>
   </div>
 
-<!--  TODO:
-        EWS pic
-        update other pics
-        rotate images
- -->
-
   <div class="py-2 bg-light">
   <div class="container card bg-secondary mb-3 py-2 shadow-lg">
     <div class="row">
@@ -42,7 +36,7 @@
 
               <div class="card">
                 <div class="view overlay">
-                  <img class="card-img-top" src="images/formlabs.jpg" alt="Card image cap">
+                  <img class="card-img-top" src="images/formlabs.JPG" alt="Card image cap">
                   <div class="card-img-overlay d-flex justify-content-center align-items-center">
                     <h2 class="text-secondary card-text">Formlabs 1+</h2>
                     <div class="card-img-overlay mask flex-center rgba-red-strong">
@@ -201,7 +195,7 @@
           <div class="card col-md-4 align-self-center p-0">
             <img class="card-img" src="images/3DScanner.jpg"> </div>
           <div class="card col-md-4 align-self-center p-0">
-            <img class="card-img" src="images/ews.JPG"> </div>
+            <img class="card-img" src="images/ews.jpg"> </div>
         </div>
       </div>
     </div>
