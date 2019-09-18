@@ -7,5 +7,4 @@
 [The Forge Website](https://theforge.rpi.edu/)
 
 ### Contact Us
-
 Join our [Slack](https://rpiforge.slack.com/) channel!
