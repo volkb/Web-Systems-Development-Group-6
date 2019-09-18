@@ -201,7 +201,7 @@
           <div class="card col-md-4 align-self-center p-0">
             <img class="card-img" src="images/3DScanner.jpg"> </div>
           <div class="card col-md-4 align-self-center p-0">
-            <img class="card-img" src="images/ews.JPG"> </div>
+            <img class="card-img" src="images/ews.jpg"> </div>
         </div>
       </div>
     </div>
