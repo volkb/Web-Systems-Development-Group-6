@@ -3,7 +3,7 @@
 
 <head>
     <?php include_once 'controllers/functions.php';?>
-    <?php include_once 'controllers/auth_controller.php';?>
+    <?php include_once 'controllers/admin_auth_controller.php';?>
     <?php include_once "controllers/db_connector.php";?>
     <?php include_once 'style.php';?>
     <meta charset="utf-8">

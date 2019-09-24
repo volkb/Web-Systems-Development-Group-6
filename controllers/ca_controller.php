@@ -1,6 +1,7 @@
 <?php
 include_once "db_connector.php";
 include_once 'email_functions.php';
+require_once 'auth_controller.php';
 
 //grab variables from the post, write them to locals
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
