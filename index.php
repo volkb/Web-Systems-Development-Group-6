@@ -25,7 +25,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="hours.php">Hours</a>
                     <a class="dropdown-item" href="contact.php">Contact</a>
-                    <a class="dropdown-item" href="Equipment.php">Equipment</a>
+                    <a class="dropdown-item" href="equipment.php">Equipment</a>
                   </div>
 
               <?php
