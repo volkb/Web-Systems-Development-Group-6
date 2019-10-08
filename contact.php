@@ -75,8 +75,7 @@
 
                           // Sending a receipt
                           $receiptSubject = "Thank you for contacting The Forge";
-                          $receiptMessage = "Thank you for contacting The Forge!\r\nPlease keep this copy of your message for your records.  
-                              We will be in touch shortly.\r\n" . $message;
+                          $receiptMessage = "Thank you for contacting The Forge!\r\nPlease keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
                           $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
                           if (mail($to,$subject,$message,$headers)) {
