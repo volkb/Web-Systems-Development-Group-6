@@ -74,8 +74,8 @@
                           $wrong = "There was an error sending your email.  Please try again later";
 
                           // Sending a receipt
-                          $receiptSubject = "Thank you for contacting The Forge";
-                          $receiptMessage = "Thank you for contacting The Forge!\r\nPlease keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
+                          $receiptSubject = "Thank You for Contacting The Forge";
+                          $receiptMessage = $name. ",\r\nThank you for contacting The Forge!  Please keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
                           $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
                           if (mail($to,$subject,$message,$headers)) {
