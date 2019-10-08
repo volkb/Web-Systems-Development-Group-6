@@ -80,7 +80,7 @@
                           $receiptMessage = $name. ",\r\nThank you for contacting The Forge!  Please keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
                           $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
-                          if (mail($to,$subject,$message,$headers)) {
+                          if (mail($to,$subject,$message,$headers, '-f '.$from)) {
                               mail($from,$receiptSubject,$receiptMessage,$receiptHeaders);
                             echo "<script type='text/javascript'>alert('$right');</script>";
                           }
