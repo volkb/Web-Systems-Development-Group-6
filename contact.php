@@ -24,7 +24,7 @@
 <!--                                  </div>-->
                                   <div class="col-sm-9">
                                       <h3 class="">Find us Physically</h3>
-                                      <p class="">We are located in the CII 2037A. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;</p>
+                                      <p class="">We are located in the CII 2037A. &nbsp;Take the elevators down in the Low building to the second floor.  If the door is green, come say hi!</p>
                                       <a class="btn btn-primary" href="hours.php">Hours of Operation
                                           <br> </a>
                                   </div>
