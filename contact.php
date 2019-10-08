@@ -77,11 +77,11 @@
 
                           // Sending a receipt
                           $receiptSubject = "Thank You for Contacting The Forge";
-                          $receiptMessage = $name. ",\r\nThank you for contacting The Forge!  Please keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
+                          $receiptMessage = "Thank you for reaching out to us!  Please save this email as proof of contact, we will respond as fast as we can!\r\n\r\n- The Forge\r\n\r\nYour message:\r\n" . $message;
                           $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
-                          if (mail($to,$subject,$message,$headers, '-f '.$from)) {
-                              mail($from,$receiptSubject,$receiptMessage,$receiptHeaders);
+                          if (mail($to, $subject, $message, $headers, '-f '.$from)) {
+                              mail($from, $receiptSubject, $receiptMessage, $receiptHeaders);
                             echo "<script type='text/javascript'>alert('$right');</script>";
                           }
 
