@@ -69,7 +69,9 @@
                           $name = $_POST['name'];
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
-                          $headers = "From: " . $name;
+                          $headers = 'From: '.$name."\r\n" .
+                            'Reply-To: '.$from."\r\n";
+
                           $right = "Mail successfully sent.  A copy of your message has been sent to your email.";
                           $wrong = "There was an error sending your email.  Please try again later";
 
