@@ -70,13 +70,19 @@
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
                           $headers = "From: " . $name;
-                          $right = "Mail successfully sent";
+                          $right = "Mail successfully sent.  A copy of your message has been sent to your email.";
                           $wrong = "There was an error sending your email.  Please try again later";
 
+                          // Sending a receipt
+                          $receiptSubject = "Thank You for Contacting The Forge";
+                          $receiptMessage = $name. ",\r\nThank you for contacting The Forge!  Please keep this copy of your message for your records.  We will be in touch shortly.\r\n\r\n" . $message;
+                          $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
-                          if (mail($to,$subject,$message,$headers))
-                              echo "<script type='text/javascript'>alert('$right');</script>";
-//                              echo "Mail successfully sent";
+                          if (mail($to,$subject,$message,$headers)) {
+                              mail($from,$receiptSubject,$receiptMessage,$receiptHeaders);
+                            echo "<script type='text/javascript'>alert('$right');</script>";
+                          }
+
                           else
                               echo "<script type='text/javascript'>alert('$wrong');</script>";
                          // You can also use header('Location: thank_you.php'); to redirect to another page.
