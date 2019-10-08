@@ -70,7 +70,7 @@
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
                           $headers = "From: " . $name;
-                          $right = "Mail successfully sent";
+                          $right = "Mail successfully sent.  A copy of your message has been sent to your email.";
                           $wrong = "There was an error sending your email.  Please try again later";
 
                           // Sending a receipt
