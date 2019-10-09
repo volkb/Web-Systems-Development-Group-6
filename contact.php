@@ -49,7 +49,7 @@
                                                     <i class="fa fa-fw fa-facebook color"></i>
                                                 </li>
                                             </a>
-                                            <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
+                                            <a href="https://www.instagram.com/the_forge_rpi/" target="_blank" class="virtual_link">
                                                 <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
                                                     <i class="fa fa-fw fa-instagram"></i>
                                                 </li>
