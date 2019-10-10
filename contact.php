@@ -26,7 +26,7 @@
 <!--                                  </div>-->
                                   <div class="col-sm-9">
                                       <h3 class="">Find us Physically</h3>
-                                      <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;</p>
+                                      <p class="">We are located in the CII 2037A. &nbsp;Take the elevators down in the Low building to the second floor.  If the door is green, come say hi!</p>
                                       <a class="btn btn-primary" href="hours.php">Hours of Operation
                                           <br> </a>
                                   </div>
@@ -34,24 +34,25 @@
                           </div>
                           <div class="col-md-6 p-4">
                               <div class="row">
-<!--                                  <div class="col-sm-3 text-center">-->
-<!--                                      <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
-<!--                                  </div>-->
-                                  <div class="col-sm-12">
-                                      <h3 class="">Find us Virtually</h3>
-                                      <ul class="list-group">
-                                          <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
-                                              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
-                                                  <i class="fa fa-fw fa-facebook"></i>
-                                              </li>
-                                          </a>
-                                          <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
-                                              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
-                                                  <i class="fa fa-fw fa-instagram"></i>
-                                              </li>
-                                          </a>
-                                      </ul>
-                                  </div>
+<!--                             <div class="col-sm-3 text-center">-->
+<!--                                 <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
+<!--                             </div>-->
+                                <div class="col-sm-12">
+                                    <h3 class="">Find us Virtually</h3>
+                                        <ul class="list-group">
+
+                                            <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
+                                                    <i class="fa fa-fw fa-facebook color"></i>
+                                                </li>
+                                            </a>
+                                            <a href="https://www.instagram.com/the_forge_rpi/" target="_blank" class="virtual_link">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
+                                                    <i class="fa fa-fw fa-instagram"></i>
+                                                </li>
+                                            </a>
+                                        </ul>
+                                </div>
                               </div>
                           </div>
                       </div>
@@ -65,14 +66,22 @@
                           $name = $_POST['name'];
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
-                          $headers = "From: " . $name;
-                          $right = "Mail successfully sent";
+                          $headers = 'From: '.$name."\r\n" .
+                            'Reply-To: '.$from."\r\n";
+
+                          $right = "Mail successfully sent.  A copy of your message has been sent to your email.";
                           $wrong = "There was an error sending your email.  Please try again later";
 
+                          // Sending a receipt
+                          $receiptSubject = "Thank You for Contacting The Forge";
+                          $receiptMessage = "Thank you for reaching out to us!  Please save this email as proof of contact, we will respond as fast as we can!\r\n\r\n- The Forge\r\n\r\nYour message:\r\n" . $message;
+                          $receiptHeaders = "From: NO_REPLY@TheForge.rpi.edu";
 
-                          if (mail($to,$subject,$message,$headers))
-                              echo "<script type='text/javascript'>alert('$right');</script>";
-//                              echo "Mail successfully sent";
+                          if (mail($to, $subject, $message, $headers, '-f '.$from)) {
+                              mail($from, $receiptSubject, $receiptMessage, $receiptHeaders);
+                            echo "<script type='text/javascript'>alert('$right');</script>";
+                          }
+
                           else
                               echo "<script type='text/javascript'>alert('$wrong');</script>";
                          // You can also use header('Location: thank_you.php'); to redirect to another page.

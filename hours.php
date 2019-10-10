@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-secondary">
+<html class="bg-light">
 
   <head>
     <?php include 'style.php';?>
@@ -74,7 +74,7 @@
               <div class="col-sm-9">
                 <h3 class="">Where to Find Us</h3>
                 <p class="">Located in
-                  <b style="font-weight: bold;">CII 2037</b>, we can be found by taking the elevator in the Low building down to the second floor and following the hallway to the left. &nbsp;We are also up the stairs from WRPI and overlooking the MILL floor.</p>
+                  <b style="font-weight: bold;">CII 2037A</b>, we can be found by taking the elevator in the Low building down to the second floor and following the hallway to the left. &nbsp;We are also up the stairs from WRPI and overlooking the MILL floor.  If the door is green, come say hi!</p>
               </div>
             </div>
           </div>
