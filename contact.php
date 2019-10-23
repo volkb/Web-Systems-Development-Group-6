@@ -31,10 +31,6 @@
                               </div>
                           </div>
 
-<!--                        TODO:
-                              Change "virtual" buttons to white so they stand out
--->
-
                           <div class="col-md-6 p-4">
                               <div class="row">
 <!--                             <div class="col-sm-3 text-center">-->
