@@ -27,7 +27,7 @@ if(!$mail->send()) {
         </script>";
 } else {
     echo "<script type= 'text/javascript'>
-        alert('Message sent!');
+        alert('Message sent!  Please check your email.');
         window.location.replace(\" ../index.php\");
         </script>";
 }

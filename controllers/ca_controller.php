@@ -31,7 +31,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     if($duplicate_user){
       //Redirects the user to the create account page again and displays an error
       echo "<script type='text/javascript'>
-                alert('That rcsID is unavailable!');
+                alert('That RCSID is unavailable!');
                 window.location.replace(\" ../create_account.php \");
             </script>";
       exit();
