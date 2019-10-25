@@ -32,7 +32,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       header("Location: verify_controller.php");
     }else{
       echo "<script>
-      alert('Your rcsID or password is incorrect!');
+      alert('Your RCSID or password is incorrect!');
       window.location.replace(\" ../login.php \");
       </script>";
     }
