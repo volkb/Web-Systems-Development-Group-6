@@ -361,7 +361,6 @@ body {
 .modal-backdrop.in {
   z-index: auto;
 }
-
   /*Card Stuff for equipment*/
 
 .view {
@@ -423,5 +422,3 @@ body {
 .card-text {
   color: #ffffff !important;
 }
-
-

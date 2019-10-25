@@ -4275,14 +4275,6 @@ button.bg-dark:focus {
 .rounded-0 {
   border-radius: 0 !important; }
 
-.rotate90 {
-  -webkit-transform:rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
 .clearfix::after {
   display: block;
   clear: both;

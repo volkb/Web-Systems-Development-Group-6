@@ -1,4 +1,4 @@
-<?php require_once 'controllers/auth_controller.php';?>
+<?php require_once 'controllers/admin_auth_controller.php';?>
 <?php
 require_once 'vendor/autoload.php';
 require_once 'controllers/functions.php';

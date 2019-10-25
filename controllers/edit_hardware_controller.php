@@ -1,5 +1,6 @@
 <?php
 include_once "db_connector.php";
+require_once "admin_auth_controller.php";
 if(isset($_POST['name'])) {
 
   $conn = dbConnect();

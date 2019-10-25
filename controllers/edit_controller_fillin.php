@@ -16,11 +16,11 @@ if(isset($_POST['rin'])){
         echo "RIN doesn't exist";
     }
     else{
-        echo $user['rcsID']." ";
-        echo $user['firstName']." ";
-        echo $user['lastName']." ";
-        echo $user['email']." ";
-        echo $user['type']." ";
+        echo $user['rcsID'].".%.";
+        echo $user['firstName'].".%.";
+        echo $user['lastName'].".%.";
+        echo $user['email'].".%.";
+        echo $user['type'].".%.";
     }
 }
 else{

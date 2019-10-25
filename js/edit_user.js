@@ -12,7 +12,7 @@ $('#get_info').submit(function(e){
                 alert("Did not fill in a RIN");
             }
             else{
-                var parsed = data.split(" ");
+                var parsed = data.split(".%.");
                 console.log(data);
                 document.getElementById('rcsID').value=parsed[0];
                 document.getElementById('first').value=parsed[1];

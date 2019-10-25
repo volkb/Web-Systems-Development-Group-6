@@ -1,6 +1,7 @@
 <?php
 include_once "db_connector.php";
 include_once 'email_functions.php';
+require_once 'auth_controller.php';
 
 //grab variables from the post, write them to locals
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
@@ -31,7 +32,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     if($duplicate_user){
       //Redirects the user to the create account page again and displays an error
       echo "<script type='text/javascript'>
-                alert('That RCSID is unavailable!');
+                alert('That rcsID is unavailable!');
                 window.location.replace(\" ../create_account.php \");
             </script>";
       exit();

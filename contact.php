@@ -6,14 +6,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="bg-light">
-  <div class="bg-light pt-3 p-2">
+<body class="bg-secondary">
+  <div class="bg-secondary pt-3 p-2">
       <?php include 'nav_bar.php';?>
+<!--        for update purposes-->
       <div class="container">
           <div class="row">
               <div class="col-md-12">
                   <h1 class="text-center pt-3 display-4 text-primary">Contact Us</h1>
                   <p class="text-center">Looking to get in touch?</p>
+
                   <!--manual adjustment to center the container-->
                   <div id = "container">
                       <div class="row">
@@ -30,7 +32,6 @@
                                   </div>
                               </div>
                           </div>
-
                           <div class="col-md-6 p-4">
                               <div class="row">
 <!--                             <div class="col-sm-3 text-center">-->
